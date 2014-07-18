@@ -1,0 +1,30 @@
+@font-face {
+		font-family: 'Helvetica-LightOblique';
+		src: url('helveticalightoblique.eot');
+		src: url('helveticalightoblique.eot?#iefix') format('embedded-opentype'),
+				 url('helveticalightoblique.woff') format('woff'),
+				 url('helveticalightoblique.ttf') format('truetype'),
+				 url('helveticalightoblique.svg#helveticalightoblique') format('svg');
+		font-weight: normal;
+		font-style: normal;
+}
+@font-face {
+		font-family: 'Helvetica-Light';
+		src: url('18909helveticalt.eot');
+		src: url('18909helveticalt.eot?#iefix') format('embedded-opentype'),
+				 url('18909helveticalt.woff') format('woff'),
+				 url('18909helveticalt.ttf') format('truetype'),
+				 url('18909helveticalt.svg#18909helveticalt') format('svg');
+		font-weight: normal;
+		font-style: normal;
+}
+@font-face {
+		font-family: 'ScriptMTBold';
+		src: url('scriptbl.eot');
+		src: url('scriptbl.eot?#iefix') format('embedded-opentype'),
+				 url('scriptbl.woff') format('woff'),
+				 url('scriptbl.ttf') format('truetype'),
+				 url('scriptbl.svg#scriptbl') format('svg');
+		font-weight: normal;
+		font-style: normal;
+}
