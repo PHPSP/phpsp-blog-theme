@@ -15,11 +15,13 @@ Após isto clone o este repo em na pasta `themes`:
 cd seu-ambiente-de-desenvolvimento/wp-content/themes/
 git clone git@github.com:PHPSP/phpsp-blog-theme.git
 ```  
-Após insto baixe os seguintes plugins na versão mais atual, e os coloque na pasta plugins do WordPress:  
-- http://wordpress.org/plugins/link-manager/
-- http://wordpress.org/support/plugin/event-organiser
+Após insto baixe os plugins executando o MakeFile
+```shell
+cd phpsp-blog-theme.git
+make
+```  
 
-A imagem principal do header esta em `wp-content/themes/phpsp-blog-theme/img/cropped-banner.jpg`.  
+A imagem principal do header esta em `wp-content/themes/phpsp-blog-theme/img/cropped-banner.jpg`.
 
 #### Bugs
 
