@@ -20,11 +20,7 @@ Após isto clone o este repo em na pasta `themes`:
 cd seu-ambiente-de-desenvolvimento/wp-content/themes/
 git clone git@github.com:PHPSP/phpsp-blog-theme.git
 ```  
-Após insto baixe os plugins executando o MakeFile
-```shell
-cd phpsp-blog-theme.git
-make
-```  
+Após instalar o tema instale os plugins e dependências executando o arquivo de build com o `phing`
 
 A imagem principal do header esta em `wp-content/themes/phpsp-blog-theme/img/cropped-banner.jpg`.
 
