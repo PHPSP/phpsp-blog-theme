@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="phpsp"
+         default="main"
+         basedir="."
+         description="phpsp blog theme">
+
+    <property name="message" value="Hello phpsp!"/>
+    <property name="plugindir" value="../../plugins/"/>
+
+    <target name="main">
+        <echo msg="${message}"/>
+        <exec
+                escape="false"
+                passthru="true"
+                checkreturn="true"
+                command="curl http://downloads.wordpress.org/plugin/wp-no-category-base.zip -o '${plugindir}wp-no-category-base.zip'" />
+        <unzip file="${plugindir}wp-no-category-base.zip" todir="${plugindir}" />
+
+        <exec
+                escape="false"
+                passthru="true"
+                checkreturn="true"
+                command="curl http://downloads.wordpress.org/plugin/disqus-comment-system.2.77.zip -o '${plugindir}disqus-comment-system.2.77.zip'" />
+        <unzip file="${plugindir}disqus-comment-system.2.77.zip" todir="${plugindir}" />
+
+        <exec
+            escape="false"
+            passthru="true"
+            checkreturn="true"
+            command="curl http://downloads.wordpress.org/plugin/crayon-syntax-highlighter.zip -o '${plugindir}crayon-syntax-highlighter.zip'" />
+        <unzip file="${plugindir}crayon-syntax-highlighter.zip" todir="${plugindir}" />
+
+        <exec
+                escape="false"
+                passthru="true"
+                checkreturn="true"
+                command="curl http://downloads.wordpress.org/plugin/event-organiser.latest-stable.zip -o '${plugindir}event-organiser.latest-stable.zip'" />
+        <unzip file="${plugindir}event-organiser.latest-stable.zip" todir="${plugindir}" />
+
+        <exec
+                escape="false"
+                passthru="true"
+                checkreturn="true"
+                command="curl http://downloads.wordpress.org/plugin/link-manager.zip -o '${plugindir}link-manager.zip'" />
+        <unzip file="${plugindir}link-manager.zip" todir="${plugindir}" />
+
+        <fileset dir="${plugindir}" id="deleteFiles">
+            <include name="wp-no-category-base.zip" />
+            <include name="disqus-comment-system.2.77.zip" />
+            <include name="crayon-syntax-highlighter.zip" />
+            <include name="event-organiser.latest-stable.zip" />
+            <include name="link-manager.zip" />
+        </fileset>
+
+        <delete>
+            <fileset refid="deleteFiles" />
+        </delete>
+    </target>
+
+</project>
