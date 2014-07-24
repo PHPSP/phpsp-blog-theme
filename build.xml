@@ -37,19 +37,11 @@
                 command="curl http://downloads.wordpress.org/plugin/event-organiser.latest-stable.zip -o '${plugindir}event-organiser.latest-stable.zip'" />
         <unzip file="${plugindir}event-organiser.latest-stable.zip" todir="${plugindir}" />
 
-        <exec
-                escape="false"
-                passthru="true"
-                checkreturn="true"
-                command="curl http://downloads.wordpress.org/plugin/link-manager.zip -o '${plugindir}link-manager.zip'" />
-        <unzip file="${plugindir}link-manager.zip" todir="${plugindir}" />
-
         <fileset dir="${plugindir}" id="deleteFiles">
             <include name="wp-no-category-base.zip" />
             <include name="disqus-comment-system.2.77.zip" />
             <include name="crayon-syntax-highlighter.zip" />
             <include name="event-organiser.latest-stable.zip" />
-            <include name="link-manager.zip" />
         </fileset>
 
         <delete>
