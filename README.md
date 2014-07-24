@@ -43,10 +43,13 @@ vagrant up
 
 Finalize a instalação seguindo as instruções na seção abaixo
 
+Crie uma referencia no seu arquivo de hosts de blog.phpsp.dev para 192.168.56.131
+
+O Painel Administrativo poderá ser acessado em http://blog.phpsp.dev
+
 #### Finalizando a Instalação
 
-1. Crie uma referencia no seu arquivo de hosts de blog.phpsp.dev para 192.168.56.131
-1. Acesse o painel administrativo do Wordpress em http://blog.phpsp.dev
+1. Acesse o painel administrativo do Wordpress
 2. Ative todos os plugins na Aba "Plugins"
 3. Ative o Tema do PHPSP na aba "Aparencia"
 4. Acesse a sub-aba 'Cabeçalho' e inclua a imagem presente em `img/cropped-banner.jpg`.
