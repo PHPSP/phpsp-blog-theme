@@ -45,7 +45,12 @@
 	<header  role="banner">		
 		<section class="header-section container clearfix">
 			<div class="row-fluid">	
-				<h1 class="title"><a href="<?php bloginfo('url') ?>"><img src="<?php bloginfo('template_url') ?>/img/logo.png" alt=""></a></h1> <div class="title_web hidden-phone hidden-tablet"><?php bloginfo( 'name' ); ?></div>
+                <h1 class="title">
+                    <a href="<?php bloginfo('url') ?>">
+                        <img src="<?php bloginfo('template_url') ?>/img/logo.png" alt="">
+                    </a>
+                </h1> 
+                <div class="title_web hidden-phone hidden-tablet"><?php bloginfo( 'name' ); ?></div>
 				<?php get_search_form(); ?>				
 			</div>	
 		</section>
@@ -100,15 +105,29 @@
 				  } 
 				}
 			       ?>				
-			</div>
-			<div class="shared">
-				<?php $bookmarks = get_bookmarks( array('category_name' => 'Mídias Sociais', 'orderby' => 'id', 'order' => 'ASC'));				
-					foreach ( $bookmarks as $bm ) {  ?>
-					    <a class="link_parceiros"  href="<?php echo $bm->link_url; ?>" target="_blank">
-						<img alt="<?php echo $bm->link_name; ?>" src="<?php echo get_bloginfo( 'template_url' )."/img/icons/".str_replace("http://","",$bm->link_image); ?>" />
-					    </a>					
-				<?php }	?>
-			</div>
+            </div>
+            <div class="shared">
+                <a href="http://facebook.com/sao.paulo.elephants" target="_blank">
+                    <img alt="Facebook" 
+                        src="<?php bloginfo('template_url'); ?>/img/icons/facebook.png">
+                </a>					
+                <a href="http://twitter.com/phpsp" target="_blank">
+                    <img alt="Twitter" 
+                        src="<?php bloginfo('template_url'); ?>/img/icons/twitter.png">
+                </a>					
+                <a href="https://plus.google.com/communities/108495352672468069896" target="_blank">
+                    <img alt="Google plus" 
+                        src="<?php bloginfo('template_url'); ?>/img/icons/google-plus.png">
+                </a>					
+                <a href="http://www.linkedin.com/groups/PHPSP-Grupo-Desenvolvedores-PHP-S%C3%A3o-1808119" target="_blank">
+                    <img alt="Linkedin" 
+                        src="<?php bloginfo('template_url'); ?>/img/icons/linkedin.png">
+                </a>					
+                <a href="http://github.com/phpsp" target="_blank">
+                    <img alt="Github" 
+                        src="<?php bloginfo('template_url'); ?>/img/icons/github.png">
+                </a>					
+            </div>
 		</section>
 	</header>
 
