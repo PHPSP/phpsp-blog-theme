@@ -27,9 +27,9 @@
                 <img alt="Conta Azul" 
                 src="<?php bloginfo( 'template_url' ); ?>/img/contaazul.png">
             </a>				
-            <a href="http://www.jetbrains.com/" target="_blank">
+            <a href="http://www.jetbrains.com/phpstorm/" target="_blank">
                 <img alt="Jet Brains" 
-                src="<?php bloginfo( 'template_url' ); ?>/img/jetbrains.png">
+                src="<?php bloginfo( 'template_url' ); ?>/img/logo_phpstorm.png">
             </a>				
 		</section>
 		<nav class="visible-phone">
