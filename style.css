@@ -311,8 +311,7 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 		padding: 40px 0px;
 		text-align: center;
 	}
-	
-	.link_parceiros{
+	.footer_links a {
 		display: inline-block;
 		padding: 25px 0px;
 	}
@@ -537,7 +536,7 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 		text-align: center;
 	}
 	
-	.footer_links a{
+	.footer_links a {
 		clear: both;
 		display: block;
 		margin-bottom: 30px;

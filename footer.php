@@ -1,37 +1,41 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * Contains footer content and the closing of the
- * #main and #page div elements.
- *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
- */
-?>
 	</section><!-- #main .wrapper -->
 	<footer role="contentinfo">
 		<section class="container facebook">
 			<h3>Curta o PHPSP</h3>
 			<div id="facebook-box">
-                        	<div id="face">&nbsp;</div> 
-                        </div>
-		</section>
-		<section class="footer_links">		
-			
-				<?php $bookmarks = get_bookmarks( array('category_name' => 'Parceiros', 'orderby' => 'id', 'order' => 'ASC'));			
-					foreach ( $bookmarks as $bm ) {  ?>
-					   <a class="link_parceiros"  href="<?php echo $bm->link_url; ?>" target="_blank">
-						<img alt="<?php echo $bm->link_name; ?>"  src="<?php echo get_bloginfo( 'template_url' )."/img/".str_replace("http://","",$bm->link_image); ?>" />
-					    </a>				
-				<?php }	?>										
-			
+                <div id="face">&nbsp;</div> 
+            </div>
+        </section>
+        <section class="footer_links">		
+            <a href="http://www.soyuz.com.br/" target="_blank">
+                <img alt="Soyuz" 
+                    src="<?php bloginfo( 'template_url' ); ?>/img/soyuz.png">
+            </a>				
+            <a href="http://www.php.net/" target="_blank">
+                <img alt="Php" 
+                    src="<?php bloginfo( 'template_url' ); ?>/img/php.png">
+            </a>				
+            <a href="http://www.windowsazure.com/pt-br/" target="_blank">
+                <img alt="Windows Azure" 
+                    src="<?php bloginfo( 'template_url' ); ?>/img/azure.png">
+            </a>				
+            <a href="http://imasters.com.br/" target="_blank">
+                <img alt="iMasters" 
+                    src="<?php bloginfo( 'template_url' ); ?>/img/imasters.png">
+            </a>				
+            <a href="https://contaazul.com/" target="_blank">
+                <img alt="Conta Azul" 
+                src="<?php bloginfo( 'template_url' ); ?>/img/contaazul.png">
+            </a>				
+            <a href="http://www.jetbrains.com/" target="_blank">
+                <img alt="Jet Brains" 
+                src="<?php bloginfo( 'template_url' ); ?>/img/jetbrains.png">
+            </a>				
 		</section>
 		<nav class="visible-phone">
 			<ul id="menu-pages" class="container menu">
-						<?php wp_list_pages('title_li='); ?>
-						<li><a href="<?php bloginfo('url'); ?>?feed=rss2">Subscribe</a></li>
+                <?php wp_list_pages('title_li='); ?>
+                <li><a href="<?php bloginfo('url'); ?>?feed=rss2">Subscribe</a></li>
 			</ul>
 		</nav>
 		<section id="creative-commons" class="container">
