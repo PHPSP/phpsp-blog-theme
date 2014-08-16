@@ -14,12 +14,13 @@
 
 ### Instalação
 
-Existem várias formas de instalar esse plugin, escolha a que melhor lhe agradar:
+#### Produção 
+Com o WordPress instalado baixe o [thema na versão mais recente](https://github.com/PHPSP/phpsp-blog-theme/releases) e instale pelo gerenciador de temas do WordPress.
+É necessário instalar os [plugins]() e ativalos;
 
 #### Localmente
 
-Baixe a versão mais recente do WordPress e instale-a em seu ambiênte de
-desenvolvimento. Após isto clone este repositório em na pasta `themes`:
+Baixe a versão mais recente do WordPress e instale-a em seu ambiênte de desenvolvimento. Após isto clone este repositório em na pasta `themes`:
 
 ```shell
 cd seu-ambiente-de-desenvolvimento/wp-content/themes/
@@ -54,11 +55,22 @@ O Painel Administrativo poderá ser acessado em http://blog.phpsp.dev
 3. Ative o Tema do PHPSP na aba "Aparencia"
 4. Acesse a sub-aba 'Cabeçalho' e inclua a imagem presente em `img/cropped-banner.jpg`.
 
-#### Bugs
+### Plugins e dependências
+*  [WP No Category Base](https://wordpress.org/plugins/wp-no-category-base/)
+*  [Disqus Comment System](https://wordpress.org/plugins/disqus-comment-system/)
+*  [Crayon Syntax Highlighter](https://wordpress.org/plugins/crayon-syntax-highlighter/)
+*  [Event Organiser](http://wordpress.org/plugins/event-organiser/)
+
+### Bugs
 
 Quando encontrar um bug reporte-o no sistema de issues aqui do Github
 
-#### Sugestões
+### Sugestões
 
 Quer dar uma sugestão de mudança? cadastre no sistema de issues também
 Você também pode abrir um Pull Request com a implementação de sua sugestão
+
+### Licença
+
+![Licença Creative Commons](http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png)
+
