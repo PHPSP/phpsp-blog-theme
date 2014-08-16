@@ -16,7 +16,7 @@
 
 #### Produção 
 Com o WordPress instalado baixe o [thema na versão mais recente](https://github.com/PHPSP/phpsp-blog-theme/releases) e instale pelo gerenciador de temas do WordPress.
-É necessário instalar os [plugins]() e ativalos;
+É necessário instalar os [plugins](#plugins-e-depend%C3%AAncias) e ativalos;
 
 #### Localmente
 
