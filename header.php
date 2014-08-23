@@ -86,27 +86,14 @@
 				
 		<section class="container">
 			<div class="event">
-				<strong>Próximo encontro: </strong>
-				<?php											
-					
-				$events = eo_get_events(array( 
-					'numberposts'=>1, 
-					'events_start_after'=>'today',
-					'event-category' => 'prox-encontro',
-					'showpastevents'=>false,
-				));
-
-				if($events){ 
-				  foreach ($events as $event){ 
-				       $venue_id = eo_get_venue($event->ID); 
-				       $venue_name = eo_get_venue_name($venue_id);
-				       $str = eo_get_the_start('j F Y, H\hi', $event->ID,null,$event->occurrence_id);		
-				       echo $venue_name.", ".$str."\n";
-				  } 
-				}
-			       ?>				
+				<strong>Próximos encontros e eventos? </strong>
+				<a href="http://www.meetup.com/php-sp/">Visite a página do PHPSP no Meetup</a>
             </div>
             <div class="shared">
+                <a href="http://www.meetup.com/php-sp/" target="_blank">
+                    <img alt="Meetup" 
+                        src="<?php bloginfo('template_url'); ?>/img/icons/meetup.png">
+                </a>
                 <a href="http://facebook.com/sao.paulo.elephants" target="_blank">
                     <img alt="Facebook" 
                         src="<?php bloginfo('template_url'); ?>/img/icons/facebook.png">
