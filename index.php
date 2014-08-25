@@ -50,7 +50,7 @@ get_header(); ?>
 			    <h2 class="black-block">Próximos <strong>Eventos</strong></h2>
 			    <div class="row-fluid article-phpsp-home">
 					<div class="span12">
-						<p><a href="http://www.meetup.com/php-sp/">No Meetup do PHPSP você encontros os eventos do grupo.</a></p>
+						<p><a href="http://www.meetup.com/php-sp/">No Meetup do PHPSP você encontra os eventos do grupo.</a></p>
 						<p><a href="http://www.meetup.com/php-sp/"><img src="<?php bloginfo('template_url'); ?>/img/phpspMaisMeetup.png" alt="Meetup"></a></p>
 					</div>
 				</div>

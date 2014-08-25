@@ -1,5 +1,9 @@
 ## v1.2.0-dev (não lançada)
 
+## v1.1.2 (2014-08-25)
+
+- Corrige erro digitação na página inicial:
+    `você encontros` -> `você encontra`.
 
 ## v1.1.1 (2014-08-25)
 
