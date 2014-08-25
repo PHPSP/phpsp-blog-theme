@@ -48,35 +48,12 @@ get_header(); ?>
 		<div class="row-fluid">	
 			<div class="bl_eventos span4">
 			    <h2 class="black-block">Próximos <strong>Eventos</strong></h2>
-				<?php																
-				$events = eo_get_events(array( 
-					'numberposts'=>5, 
-					'events_start_after'=>'today',
-					'tax_query'=>array( array(
-						'taxonomy'=>'event-category',
-						'operator' => 'NOT IN',
-						'field'=>'slug',
-						'terms'=> array('prox-encontro')
-					)),
-					'showpastevents'=>false,
-				));
-
-				if($events){ 
-				  foreach ($events as $event){					
-					$venue_id = eo_get_venue($event->ID); 
-					$venue_name = eo_get_venue_name($venue_id);
-					$str = eo_get_the_start('j F Y, H\hi', $event->ID,null,$event->occurrence_id);							
-				?>
-					<div class="row-fluid article-phpsp-home">
-						<div class="span12">
-						    <div><a href="<?= get_permalink($event->ID); ?>"><?php echo $event->post_title; ?></a></div>
-						    <small><?php echo $venue_name.", ".$str."\n";?></small>
-						</div>
-					 </div>			
-				<?php				
-				  } 
-				}
-			       ?>				   
+			    <div class="row-fluid article-phpsp-home">
+					<div class="span12">
+						<p><a href="http://www.meetup.com/php-sp/">No Meetup do PHPSP você encontros os eventos do grupo.</a></p>
+						<p><a href="http://www.meetup.com/php-sp/"><img src="<?php bloginfo('template_url'); ?>/img/phpspMaisMeetup.png" alt="Meetup"></a></p>
+					</div>
+				</div>
 			</div>
 			<div class="bl_artigos span4">
 				<h2 class="blue-block"><strong>Artigos</strong> da comunidade</h2>
