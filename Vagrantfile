@@ -22,6 +22,13 @@ Vagrant.configure("2") do |config|
       config.vm.network :forwarded_port, guest: port['guest'].to_i, host: port['host'].to_i
     end
   end
+  
+  if Vagrant.has_plugin?("vagrant-cachier")
+    config.cache.scope = :box
+  else
+    puts "_Info_: Plugin '''vagrant-cachier''' is not installed."
+    puts "To install, run: vagrant plugin install vagrant-cachier"
+  end
 
   if Vagrant.has_plugin?('vagrant-hostsupdater')
     hosts = Array.new()
