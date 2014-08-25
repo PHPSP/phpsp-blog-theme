@@ -1,3 +1,6 @@
+## v1.2.0-dev (não lançada)
+
+
 ## v1.1.1 (2014-08-25)
 
 - Criação do `CHANGELOG.md`.
