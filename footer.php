@@ -44,6 +44,7 @@
 			</a>
 			<p class="desc-cc span5">O trabalho Portal de <a href="http://phpsp.org.br" property="cc:attributionName" rel="cc:attributionURL">PHP-SP</a> foi licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.pt">Creative Commons - Atribuição-NãoComercial-SemDerivados 3.0 Não Adaptada</a>.</p>
 		</section>
-	</footer>
+    </footer>
+    <?php wp_footer(); ?>
 </body>
 </html>
