@@ -20,8 +20,8 @@
                 escape="false"
                 passthru="true"
                 checkreturn="true"
-                command="curl http://downloads.wordpress.org/plugin/disqus-comment-system.2.77.zip -o '${plugindir}disqus-comment-system.2.77.zip'" />
-        <unzip file="${plugindir}disqus-comment-system.2.77.zip" todir="${plugindir}" />
+                command="curl https://downloads.wordpress.org/plugin/disqus-comment-system.zip -o '${plugindir}disqus-comment-system.zip'" />
+        <unzip file="${plugindir}disqus-comment-system.zip" todir="${plugindir}" />
 
         <exec
             escape="false"
@@ -39,7 +39,7 @@
 
         <fileset dir="${plugindir}" id="deleteFiles">
             <include name="wp-no-category-base.zip" />
-            <include name="disqus-comment-system.2.77.zip" />
+            <include name="disqus-comment-system.zip" />
             <include name="crayon-syntax-highlighter.zip" />
             <include name="event-organiser.latest-stable.zip" />
         </fileset>
