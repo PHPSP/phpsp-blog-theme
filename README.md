@@ -14,7 +14,7 @@
 
 ### Instalação
 
-#### Produção 
+#### Produção
 
 Com o WordPress instalado baixe o [tema na versão mais recente](https://github.com/PHPSP/phpsp-blog-theme/releases) e instale pelo gerenciador de temas do WordPress.
 
@@ -63,6 +63,21 @@ O Painel Administrativo poderá ser acessado em http://blog.phpsp.dev.
 *  [Disqus Comment System](https://wordpress.org/plugins/disqus-comment-system/)
 *  [Crayon Syntax Highlighter](https://wordpress.org/plugins/crayon-syntax-highlighter/)
 *  [Event Organiser](http://wordpress.org/plugins/event-organiser/)
+*  [Social Login](https://wordpress.org/plugins/oa-social-login/)
+
+### Configurando o Social Login
+
+1. Crie uma conta no site [OneAll](https://app.oneall.com/signin/)
+2. Adicione um novo Site e guarde as infromações Subdomain, Public Key e Private Key.
+![Alt text](/oneall-api-credentials.png?raw=true "Informações OneAll")
+3. Configure o Plugin na aba **Social Login** do Wordpress (Seção API Settings),
+com as informações acima.
+![Alt text](/oneall-wp-api-settings.png?raw=true "Configuração Social Plugin")
+4. Habilite o plugin para usar o GitHub como identity provider.
+5. Registre a aplicação no GitHub (Developer applications) para usar GitHub API com
+a conta do OneAll criada no passo 2.
+    register-app-github.png
+![Alt text](/register-app-github.png?raw=true "Registro app GitHub")
 
 ### Bugs
 
@@ -77,4 +92,3 @@ Você também pode [abrir um Pull Request](https://github.com/PHPSP/phpsp-blog-t
 ### Licença
 
 ![Licença Creative Commons](http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png)
-
