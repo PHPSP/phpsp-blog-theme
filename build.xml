@@ -42,13 +42,6 @@
                 passthru="true"
                 checkreturn="true"
                 command="curl https://downloads.wordpress.org/plugin/oa-social-login.4.6.zip -o '${plugindir}oa-social-login.4.6.zip'" />
-        <unzip file="${plugindir}oa-social-login.4.6.zip" todir="${plugindir}" />
-
-        <exec
-                escape="false"
-                passthru="true"
-                checkreturn="true"
-                command="curl https://downloads.wordpress.org/plugin/oa-social-login.4.6.zip -o '${plugindir}oa-social-login.4.6.zip'" />
         <unzip file="${plugindir}oa-social-login.4.6.zip" todir="${plugindir}"></unzip>
 
         <fileset dir="${plugindir}" id="deleteFiles">
