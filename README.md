@@ -14,7 +14,7 @@
 
 ### Instalação
 
-#### Produção 
+#### Produção
 
 Com o WordPress instalado baixe o [tema na versão mais recente](https://github.com/PHPSP/phpsp-blog-theme/releases) e instale pelo gerenciador de temas do WordPress.
 
@@ -63,6 +63,7 @@ O Painel Administrativo poderá ser acessado em http://blog.phpsp.dev.
 *  [Disqus Comment System](https://wordpress.org/plugins/disqus-comment-system/)
 *  [Crayon Syntax Highlighter](https://wordpress.org/plugins/crayon-syntax-highlighter/)
 *  [Event Organiser](http://wordpress.org/plugins/event-organiser/)
+*  [Easy WP SMTP](https://wordpress.org/plugins/easy-wp-smtp/)
 
 ### Bugs
 
