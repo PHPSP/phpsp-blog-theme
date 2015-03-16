@@ -242,6 +242,8 @@ add_filter( 'wp_page_menu_args', 'twentytwelve_page_menu_args' );
  *
  * @since Twenty Twelve 1.0
  */
+/*
+ * Nos nao usamos os widgets padrao. Nao ha motivos para manter eles.
 function twentytwelve_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Main Sidebar', 'twentytwelve' ),
@@ -274,6 +276,7 @@ function twentytwelve_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'twentytwelve_widgets_init' );
+*/
 
 if ( ! function_exists( 'twentytwelve_content_nav' ) ) :
 /**
@@ -540,3 +543,40 @@ function the_bootstrap_content_nav() {
 	}
 }
 endif;
+
+/**
+ * Widgets da home page
+ * Sao 3 colunas, 3 widgets
+ */
+function phpsp_home_widgets_init() {
+    register_sidebar( array(
+        'name' => __( 'First Column'),
+        'id' => 'home-column-1',
+        'description' => __( 'First columns on home page' ),
+        'before_widget' => '<div class="row-fluid widget %2$s" id="%1$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="black-block">',
+        'after_title' => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Second Column'),
+        'id' => 'home-column-2',
+        'description' => __( 'Second columns on home page' ),
+        'before_widget' => '<div class="row-fluid widget %2$s" id="%1$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="blue-block">',
+        'after_title' => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Third Column'),
+        'id' => 'home-column-3',
+        'description' => __( 'Third columns on home page' ),
+        'before_widget' => '<div class="row-fluid article-phpsp-home widget %2$s" id="%1$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="grey-block">',
+        'after_title' => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'phpsp_home_widgets_init' );
