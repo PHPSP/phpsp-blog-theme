@@ -40,9 +40,7 @@
 </head>
 
 <body>
-	
-	
-	<header  role="banner">		
+	<header  role="banner">
 		<section class="header-section container clearfix">
 			<div class="row-fluid">	
                 <h1 class="title">
@@ -58,29 +56,12 @@
 			<a class="btn btn-navbar bar_menu" data-toggle="collapse" data-target=".nav-collapse">
 			  <span class="icon-bar">Menu</span>			  
 			</a>
-			<!--<a class="btn btn-navbar bar_sub" data-toggle="collapse" data-target=".nav-collapse2">
-			  <span class="icon-bar">Menu</span>
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>			
-			</a>-->
-			<div id="cont-menu" class="clearfix  nav-collapse collapse">						
-					<ul id="menu-principal" class="container menu">
-						<li><a href="<?php bloginfo('url'); ?>">Home</a></li>
-						<?php
-						$cats = wp_list_categories('echo=0&title_li=&exclude=1,776');
-						$cats = preg_replace('/title=\"(.*?)\"/','',$cats);
-						echo $cats;
-						?>
-					</ul>
-				
+			<div id="cont-menu" class="clearfix  nav-collapse collapse">
+                <?php wp_nav_menu(array('theme_location' => 'header-menu-1', 'menu_class' => 'container menu-principal')); ?>
 			</div>
 			
 			<div id="sub-menu" class="clearfix hidden-phone">
-				<!--nav-collapse2 collapse-->
-				<ul id="menu-pages" class="container menu">
-					<?php wp_list_pages('title_li='); ?>
-					<li><a href="<?php bloginfo('url'); ?>?feed=rss2">Subscribe</a></li>
-				</ul>							
+                <?php wp_nav_menu(array('theme_location' => 'header-menu-2', 'menu_class' => 'container menu menu-secundario')); ?>
 			</div>
 		</nav>
 				
