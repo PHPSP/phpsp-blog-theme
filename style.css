@@ -221,48 +221,48 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); 	
 	}
 	
-	ul#menu-principal {
+	ul.menu-principal {
 		list-style:none;
 		padding: 0 10px;
 	}
 	 
-	ul#menu-principal li, ul#menu-pages li{
+	ul.menu-principal li, ul.menu-secundario li{
 		display: inline-block;
 		position:relative; 
 	}
 	 
-	ul#menu-principal a {	
+	ul.menu-principal a {	
 		color:#FFF;
 		text-decoration:none;
 	}
 	
-	ul#menu-pages a{
+	ul.menu-secundario a{
 		color: #4881b5;
 		text-decoration: none;
 	}
 	 
-	ul#menu-principal li:hover a, ul#menu-pages li:hover a  {
+	ul.menu-principal li:hover a, ul.menu-secundario li:hover a  {
 		color: #000;
 		background: #FFF;
 		margin: 0px;
 	}
 	
-	ul#menu-principal li ul a, ul#menu-pages li ul a {	
+	ul.menu-principal li ul a, ul.menu-secundario li ul a {	
 		padding: 9px 15px;
 		text-align: left;
 		display: block;
 		border-bottom: 1px solid #EEEEEE;
 	}
 	
-	ul#menu-principal li ul li:hover > a, ul#menu-pages li ul li:hover > a{
+	ul.menu-principal li ul li:hover > a, ul.menu-secundario li ul li:hover > a{
 		color: #4881b5;	
 	}
 	
-	ul#menu-principal li ul li, ul#menu-pages li ul li{
+	ul.menu-principal li ul li, ul.menu-secundario li ul li{
 		width: 100%;	
 	}
 	
-	ul#menu-principal ul, ul#menu-pages ul {
+	ul.menu-principal ul, ul.menu-secundario ul {
 		list-style: none;
 		margin:0; 
 		padding:0;
@@ -270,25 +270,25 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 		position: relative; 
 	}
 	 
-	ul#menu-principal li ul, ul#menu-pages li ul {
+	ul.menu-principal li ul, ul.menu-secundario li ul {
 		top:38px;
 		background: #FFF;
 		position: absolute;
 	}
 	
-	ul#menu-principal ul li, ul#menu-pages ul li {
+	ul.menu-principal ul li, ul.menu-secundario ul li {
 		clear: both;
 	}
 	
-	ul#menu-principal ul, ul#menu-pages ul,
-	ul#menu-principal li:hover ul ul, ul#menu-pages li:hover ul ul,
-	ul#menu-principal ul li:hover ul ul, ul#menu-pages ul li:hover ul ul{
+	ul.menu-principal ul, ul.menu-secundario ul,
+	ul.menu-principal li:hover ul ul, ul.menu-secundario li:hover ul ul,
+	ul.menu-principal ul li:hover ul ul, ul.menu-secundario ul li:hover ul ul{
 		display: none;
 	}
 	 
-	ul#menu-principal li:hover ul, ul#menu-pages li:hover ul,
-	ul#menu-principal ul li:hover ul , ul#menu-pages ul li:hover ul,
-	ul#menu-principal ul li ul li:hover ul, ul#menu-pages ul li ul li:hover ul{
+	ul.menu-principal li:hover ul, ul.menu-secundario li:hover ul,
+	ul.menu-principal ul li:hover ul , ul.menu-secundario ul li:hover ul,
+	ul.menu-principal ul li ul li:hover ul, ul.menu-secundario ul li ul li:hover ul{
 		display: table;	
 		-webkit-box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.56);
 		-moz-box-shadow:    3px 3px 5px rgba(50, 50, 50, 0.56);
@@ -374,48 +374,48 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); 
 	}
 	
-	ul#menu-principal {
+	ul.menu-principal {
 		list-style:none;
 		padding: 0 10px;
 	}
 	 
-	ul#menu-principal li, ul#menu-pages li{
+	ul.menu-principal li, ul.menu-secundario li{
 		display: inline-block;
 		position:relative; 
 	}
 	 
-	ul#menu-principal a {	
+	ul.menu-principal a {	
 		color:#FFF;
 		text-decoration:none;
 	}
 	
-	ul#menu-pages a{
+	ul.menu-secundario a{
 		color: #4881b5;
 		text-decoration: none;
 	}
 	 
-	ul#menu-principal li:hover a, ul#menu-pages li:hover a  {
+	ul.menu-principal li:hover a, ul.menu-secundario li:hover a  {
 		color: #000;
 		background: #FFF;
 		margin: 0px;
 	}
 	
-	ul#menu-principal li ul a, ul#menu-pages li ul a {	
+	ul.menu-principal li ul a, ul.menu-secundario li ul a {	
 		padding: 9px 15px;
 		text-align: left;
 		display: block;
 		border-bottom: 1px solid #EEEEEE;
 	}
 	
-	ul#menu-principal li ul li:hover > a, ul#menu-pages li ul li:hover > a{
+	ul.menu-principal li ul li:hover > a, ul.menu-secundario li ul li:hover > a{
 		color: #4881b5;	
 	}
 	
-	ul#menu-principal li ul li, ul#menu-pages li ul li{
+	ul.menu-principal li ul li, ul.menu-secundario li ul li{
 		width: 100%;	
 	}
 	
-	ul#menu-principal ul, ul#menu-pages ul {
+	ul.menu-principal ul, ul.menu-secundario ul {
 		list-style: none;
 		margin:0; 
 		padding:0;
@@ -423,25 +423,25 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 		position: relative; 
 	}
 	 
-	ul#menu-principal li ul, ul#menu-pages li ul {
+	ul.menu-principal li ul, ul.menu-secundario li ul {
 		top:38px;
 		background: #FFF;
 		position: absolute;
 	}
 	
-	ul#menu-principal ul li, ul#menu-pages ul li {
+	ul.menu-principal ul li, ul.menu-secundario ul li {
 		clear: both;
 	}
 	
-	ul#menu-principal ul, ul#menu-pages ul,
-	ul#menu-principal li:hover ul ul, ul#menu-pages li:hover ul ul,
-	ul#menu-principal ul li:hover ul ul, ul#menu-pages ul li:hover ul ul{
+	ul.menu-principal ul, ul.menu-secundario ul,
+	ul.menu-principal li:hover ul ul, ul.menu-secundario li:hover ul ul,
+	ul.menu-principal ul li:hover ul ul, ul.menu-secundario ul li:hover ul ul{
 		display: none;
 	}
 	 
-	ul#menu-principal li:hover ul, ul#menu-pages li:hover ul,
-	ul#menu-principal ul li:hover ul , ul#menu-pages ul li:hover ul,
-	ul#menu-principal ul li ul li:hover ul, ul#menu-pages ul li ul li:hover ul{
+	ul.menu-principal li:hover ul, ul.menu-secundario li:hover ul,
+	ul.menu-principal ul li:hover ul , ul.menu-secundario ul li:hover ul,
+	ul.menu-principal ul li ul li:hover ul, ul.menu-secundario ul li ul li:hover ul{
 		display: table;	
 		-webkit-box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.56);
 		-moz-box-shadow:    3px 3px 5px rgba(50, 50, 50, 0.56);
@@ -518,11 +518,11 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 		
 	}
 	
-	#menu-principal li .children li a, #menu-pages li .children li a{
+	#menu-principal li .children li a, #menu-secundario li .children li a{
 		padding: 10px 0px 10px 30px;
 	}
 	
-	#menu-pages li a{
+	#menu-secundario li a{
 		border-bottom: 1px solid #BBBBBB;
 		display: block;
 		padding: 10px;

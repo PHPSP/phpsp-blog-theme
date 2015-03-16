@@ -60,9 +60,11 @@ function twentytwelve_setup() {
 	// This theme supports a variety of post formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
 
+    /**
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary', __( 'Primary Menu', 'twentytwelve' ) );
-
+    Deixar de lado o manu padrao e passar a usar um menu "nosso"
+    */
 	/*
 	 * This theme supports custom background color and image, and here
 	 * we also set up the default background color.
@@ -580,3 +582,16 @@ function phpsp_home_widgets_init() {
     ) );
 }
 add_action( 'widgets_init', 'phpsp_home_widgets_init' );
+/**
+ * Menus (2 linhas) no Cabecalho
+ */
+function register_phpsp_menus()
+{
+    register_nav_menus(
+        array(
+            'header-menu-1' => __('Header Menu Line 1'),
+            'header-menu-2' => __('Header Menu Line 2')
+        )
+    );
+}
+add_action('init', 'register_phpsp_menus');
