@@ -57,22 +57,11 @@
 			  <span class="icon-bar">Menu</span>			  
 			</a>
 			<div id="cont-menu" class="clearfix  nav-collapse collapse">
-					<ul id="menu-principal" class="container menu">
-						<li><a href="<?php bloginfo('url'); ?>">Home</a></li>
-						<?php
-						$cats = wp_list_categories('echo=0&title_li=&exclude=1,776');
-						$cats = preg_replace('/title=\"(.*?)\"/','',$cats);
-						echo $cats;
-						?>
-					</ul>
+                <?php wp_nav_menu(array('theme_location' => 'header-menu-1', 'container_class' => 'header-menu-1', 'menu_class' => 'container')); ?>
 			</div>
 			
 			<div id="sub-menu" class="clearfix hidden-phone">
-				<!--nav-collapse2 collapse-->
-				<ul id="menu-pages" class="container menu">
-					<?php wp_list_pages('title_li='); ?>
-					<li><a href="<?php bloginfo('url'); ?>?feed=rss2">Subscribe</a></li>
-				</ul>							
+                <?php wp_nav_menu(array('theme_location' => 'header-menu-2', 'container_class' => 'header-menu-2', 'menu_class' => 'container menu')); ?>
 			</div>
 		</nav>
 				
