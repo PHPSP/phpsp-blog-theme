@@ -1247,3 +1247,9 @@ h3#reply-title {
 .eo-venue-map.googlemap{
     display:block;
 }
+
+.meetup_list {margin:0px;}
+.meetup_list li{
+    font-size: 14px;
+    margin: 10px 0px;
+}

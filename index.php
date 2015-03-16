@@ -47,16 +47,15 @@ get_header(); ?>
 	<section class="content">
 		<div class="row-fluid">
             <div class="bl_eventos span4">
+            <?php if (!is_active_sidebar('home-column-1')) : ?>
 			    <h2 class="black-block">Próximos <strong>Eventos</strong></h2>
-            <?php if (is_active_sidebar('home-column-1')) : ?>
-                <?php dynamic_sidebar('home-column-1'); ?>
-            <?php else : ?>
 			    <div class="row-fluid article-phpsp-home">
 					<div class="span12">
-						<p><a href="http://www.meetup.com/php-sp/">No Meetup do PHPSP você encontra os eventos do grupo.</a></p>
-						<p><a href="http://www.meetup.com/php-sp/"><img src="<?php bloginfo('template_url'); ?>/img/phpspMaisMeetup.png" alt="Meetup"></a></p>
+						<p><a href="http://www.meetup.com/php-sp/">Logo mais... Aguardem.</a></p>
 					</div>
 				</div>
+            <?php else : ?>
+                <?php dynamic_sidebar('home-column-1'); ?>
             <?php endif; ?>
             </div>
             <div class="bl_artigos span4">
