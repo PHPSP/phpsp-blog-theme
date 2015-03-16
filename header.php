@@ -40,9 +40,7 @@
 </head>
 
 <body>
-	
-	
-	<header  role="banner">		
+	<header  role="banner">
 		<section class="header-section container clearfix">
 			<div class="row-fluid">	
                 <h1 class="title">
@@ -58,12 +56,7 @@
 			<a class="btn btn-navbar bar_menu" data-toggle="collapse" data-target=".nav-collapse">
 			  <span class="icon-bar">Menu</span>			  
 			</a>
-			<!--<a class="btn btn-navbar bar_sub" data-toggle="collapse" data-target=".nav-collapse2">
-			  <span class="icon-bar">Menu</span>
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>			
-			</a>-->
-			<div id="cont-menu" class="clearfix  nav-collapse collapse">						
+			<div id="cont-menu" class="clearfix  nav-collapse collapse">
 					<ul id="menu-principal" class="container menu">
 						<li><a href="<?php bloginfo('url'); ?>">Home</a></li>
 						<?php
@@ -72,7 +65,6 @@
 						echo $cats;
 						?>
 					</ul>
-				
 			</div>
 			
 			<div id="sub-menu" class="clearfix hidden-phone">
