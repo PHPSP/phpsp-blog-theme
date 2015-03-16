@@ -45,18 +45,25 @@ get_header(); ?>
 		<?php endif; ?>
 	</section>
 	<section class="content">
-		<div class="row-fluid">	
-			<div class="bl_eventos span4">
+		<div class="row-fluid">
+            <div class="bl_eventos span4">
 			    <h2 class="black-block">Próximos <strong>Eventos</strong></h2>
+            <?php if (is_active_sidebar('home-column-1')) : ?>
+                <?php dynamic_sidebar('home-column-1'); ?>
+            <?php else : ?>
 			    <div class="row-fluid article-phpsp-home">
 					<div class="span12">
 						<p><a href="http://www.meetup.com/php-sp/">No Meetup do PHPSP você encontra os eventos do grupo.</a></p>
 						<p><a href="http://www.meetup.com/php-sp/"><img src="<?php bloginfo('template_url'); ?>/img/phpspMaisMeetup.png" alt="Meetup"></a></p>
 					</div>
 				</div>
-			</div>
-			<div class="bl_artigos span4">
+            <?php endif; ?>
+            </div>
+            <div class="bl_artigos span4">
 				<h2 class="blue-block"><strong>Artigos</strong> da comunidade</h2>
+            <?php if (is_active_sidebar('home-column-2')) : ?>
+                <?php dynamic_sidebar('home-column-2'); ?>
+            <?php else : ?>
 				<?php   wp_reset_query();
 					$args = array( 'category_name' => 'artigos', 'posts_per_page' => 5 );
 					$loop = new WP_Query( $args );
@@ -73,9 +80,13 @@ get_header(); ?>
 					</div>
 				<?php endwhile; ?>
 				<a class="todos_artigos" href="<?php echo get_bloginfo('url'); ?>/index.php/category/artigos/">Ver todos os artigos...</a>
-			</div>
-			<div class="bl_avisos span4">
+            <?php endif; ?>
+            </div>
+            <div class="bl_avisos span4">
 			    <h2 class="grey-block"><strong>Avisos</strong> da comunidade</h2>
+            <?php if (is_active_sidebar('home-column-3')) : ?>
+                <?php dynamic_sidebar('home-column-3'); ?>
+            <?php else : ?>
 			    <?php
 				wp_reset_query();				
 				$loop = new WP_Query( array( 'category_name' => 'Avisos', 'posts_per_page' => 1 ) );
@@ -86,7 +97,8 @@ get_header(); ?>
 				    <strong><a href="<?php the_permalink(); ?>">Saiba mais</a></strong>
 				</div>
 			    </div>
-			</div>
+            <?php endif; ?>
+            </div>
 		</div>
 	</section>
 
