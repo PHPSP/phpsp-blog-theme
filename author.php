@@ -29,6 +29,7 @@ get_header(); ?>
 					<p><?php the_author_meta( 'description' ); ?></p>
 				</div><!-- .author-description	-->
 			</div><!-- .author-info -->
+            <h2 class="blue-block"><strong>Posts</strong> do autor</h2>
 			<?php endif; ?>
             <h2 class="blue-block"><strong>Posts</strong> de <?php the_author(); ?></h2>
 
