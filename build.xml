@@ -1,4 +1,4 @@
-<?xml version="1.1.2" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project name="phpsp"
          default="main"
          basedir="."
@@ -20,8 +20,8 @@
                 escape="false"
                 passthru="true"
                 checkreturn="true"
-                command="curl http://downloads.wordpress.org/plugin/disqus-comment-system.2.77.zip -o '${plugindir}disqus-comment-system.2.77.zip'" />
-        <unzip file="${plugindir}disqus-comment-system.2.77.zip" todir="${plugindir}" />
+                command="curl https://downloads.wordpress.org/plugin/disqus-comment-system.zip -o '${plugindir}disqus-comment-system.zip'" />
+        <unzip file="${plugindir}disqus-comment-system.zip" todir="${plugindir}" />
 
         <exec
             escape="false"
@@ -37,11 +37,27 @@
                 command="curl http://downloads.wordpress.org/plugin/event-organiser.latest-stable.zip -o '${plugindir}event-organiser.latest-stable.zip'" />
         <unzip file="${plugindir}event-organiser.latest-stable.zip" todir="${plugindir}" />
 
+        <exec
+                escape="false"
+                passthru="true"
+                checkreturn="true"
+                command="curl https://downloads.wordpress.org/plugin/easy-wp-smtp.zip -o '${plugindir}easy-wp-smtp.zip'" />
+        <unzip file="${plugindir}easy-wp-smtp.zip" todir="${plugindir}" />
+
+        <exec
+                escape="false"
+                passthru="true"
+                checkreturn="true"
+                command="curl https://downloads.wordpress.org/plugin/meetup-widgets.2.2.0.zip -o '${plugindir}meetup-widgets.2.2.0.zip'" />
+        <unzip file="${plugindir}meetup-widgets.2.2.0.zip" todir="${plugindir}" />
+
         <fileset dir="${plugindir}" id="deleteFiles">
             <include name="wp-no-category-base.zip" />
-            <include name="disqus-comment-system.2.77.zip" />
+            <include name="disqus-comment-system.zip" />
             <include name="crayon-syntax-highlighter.zip" />
             <include name="event-organiser.latest-stable.zip" />
+            <include name="easy-wp-smtp.zip" />
+            <include name="meetup-widgets.2.2.0.zip" />
         </fileset>
 
         <delete>
