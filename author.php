@@ -14,58 +14,50 @@
 get_header(); ?>
 
 	<section id="primary" class="site-content">
-		<div id="content" role="main">
-
+		<div id="content" role="main"class="row-fluid span12">
+            <div class="span8">
 		<?php if ( have_posts() ) : ?>
-
-			<?php
-				/* Queue the first post, that way we know
-				 * what author we're dealing with (if that is the case).
-				 *
-				 * We reset this later so we can run the loop
-				 * properly with a call to rewind_posts().
-				 */
-				the_post();
-			?>
-
-			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'Author Archives: %s', 'twentytwelve' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( "ID" ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
-			</header><!-- .archive-header -->
-
-			<?php
-				/* Since we called the_post() above, we need to
-				 * rewind the loop back to the beginning that way
-				 * we can run the loop properly, in full.
-				 */
-				rewind_posts();
-			?>
-
-			<?php twentytwelve_content_nav( 'nav-above' ); ?>
-
 			<?php
 			// If a user has filled out their description, show a bio on their entries.
 			if ( get_the_author_meta( 'description' ) ) : ?>
 			<div class="author-info">
-				<div class="author-avatar">
-					<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentytwelve_author_bio_avatar_size', 60 ) ); ?>
-				</div><!-- .author-avatar -->
 				<div class="author-description">
-					<h2><?php printf( __( 'About %s', 'twentytwelve' ), get_the_author() ); ?></h2>
+					<h2 class="blue-block"><?php printf( __( 'Sobre <strong>%s</strong>' ), get_the_author() ); ?></h2>
+                    <div class="author-avatar">
+                        <?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentytwelve_author_bio_avatar_size', 120 ) ); ?>
+                    </div><!-- .author-avatar -->
 					<p><?php the_author_meta( 'description' ); ?></p>
 				</div><!-- .author-description	-->
 			</div><!-- .author-info -->
 			<?php endif; ?>
+            <h2 class="blue-block"><strong>Posts</strong> de <?php the_author(); ?></h2>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
-			<?php endwhile; ?>
+            <?php
+            /* Start the Loop */
+            while ( have_posts() ) : the_post();
+                ?>
+                <article itemtype="http://schema.org/Article" itemscope>
+                    <h3><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+                    <time itemprop="dateCreated" datetime="<?php the_time('Y-m-d\TH:i'); ?>"><?php echo ucfirst(strtolower(get_the_time('l, j \d\e F, Y'))); ?></time>
+                    <div class="author">By <span itemprop="author"><?php the_author(); ?> </span></div>
+                    <div class="excerpt"><?php the_excerpt(); ?></div>
+                </article>
+            <?php
+            endwhile;
+            ?>
+            <div class="nav-previous">&nbsp;<?php previous_posts_link( '<< Página Anterior' ); ?></div>
+            <div class="nav-next">&nbsp;<?php next_posts_link( 'Próxima Página >>' ); ?></div>
 
-			<?php twentytwelve_content_nav( 'nav-below' ); ?>
+        <?php else : ?>
+            <?php get_template_part( 'content', 'none' ); ?>
+        <?php endif; ?>
 
-		<?php else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
-		<?php endif; ?>
+            </div>
+            <div class="span4">
+                <?php if (is_active_sidebar('content-right-column-1')) : ?>
+                    <?php dynamic_sidebar('content-right-column-1'); ?>
+                <?php endif; ?>
+            </div>
 
 		</div><!-- #content -->
 	</section><!-- #primary -->
