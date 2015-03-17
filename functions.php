@@ -61,9 +61,9 @@ function twentytwelve_setup() {
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
 
     /**
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menu( 'primary', __( 'Primary Menu', 'twentytwelve' ) );
-    Deixar de lado o manu padrao e passar a usar um menu "nosso"
+	 * This theme uses wp_nav_menu() in one location.
+	 * register_nav_menu( 'primary', __( 'Primary Menu', 'twentytwelve' ) );
+     * Deixar de lado o manu padrao e passar a usar um menu "nosso"
     */
 	/*
 	 * This theme supports custom background color and image, and here

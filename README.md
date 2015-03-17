@@ -64,6 +64,7 @@ O Painel Administrativo poderá ser acessado em http://blog.phpsp.dev.
 *  [Crayon Syntax Highlighter](https://wordpress.org/plugins/crayon-syntax-highlighter/)
 *  [Event Organiser](http://wordpress.org/plugins/event-organiser/)
 *  [Easy WP SMTP](https://wordpress.org/plugins/easy-wp-smtp/)
+*  [Meetup Widgets](https://wordpress.org/plugins/meetup-widgets/)
 
 ### Bugs
 
