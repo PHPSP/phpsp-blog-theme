@@ -20,9 +20,9 @@ the_post();
                             em <time itemprop="dateCreated" datetime="<?php the_time('Y-m-d\TH:i'); ?>"><?php echo strtolower(get_the_time('j \d\e F \d\e Y')); ?></time>
                             em <span itemprop="category"><?php the_category(','); ?></span></p>
                     </div>
-					<?php the_tags( '<p class="tags"><small>Tags: ', ', ', '</small></p>'); ?>
-					<div class="excerpt"><?php the_content(); ?></div>									
-				</article>
+					<div class="excerpt"><?php the_content(); ?></div>
+                    <?php the_tags( '<p class="tags">Tags: ', ', ', '</p>'); ?>
+                </article>
 				<?php
 					if ( get_the_author_meta( 'description' ) ) : ?>
 					  <div id="entry-author-info" class="single-author-info">
