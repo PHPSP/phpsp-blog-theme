@@ -11,7 +11,7 @@ the_post();
 ?>
 
 	<section class="content cat sing">
-		<div class="row-fluid">
+		<div class="row-fluid span12">
 			<div class="span8">
 				<article itemtype="http://schema.org/Article" itemscope>					
 					<h2><?php the_title(); ?></h2>						
@@ -34,7 +34,11 @@ the_post();
 				<?php endif; ?>
 				<?php comments_template(); ?>
 			</div>
-			<?php get_sidebar(); ?>
+            <div class="span4">
+                <?php if (is_active_sidebar('content-right-column-1')) : ?>
+                    <?php dynamic_sidebar('content-right-column-1'); ?>
+                <?php endif; ?>
+            </div>
 		</div>
 	</section>
 

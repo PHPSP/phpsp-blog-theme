@@ -546,6 +546,7 @@ function the_bootstrap_content_nav() {
 }
 endif;
 
+/** HOME **/
 /**
  * Widgets da home page
  * Sao 3 colunas, 3 widgets
@@ -582,6 +583,7 @@ function phpsp_home_widgets_init() {
     ) );
 }
 add_action( 'widgets_init', 'phpsp_home_widgets_init' );
+
 /**
  * Menus (2 linhas) no Cabecalho
  */
@@ -595,3 +597,20 @@ function register_phpsp_menus()
     );
 }
 add_action('init', 'register_phpsp_menus');
+
+/** Conteudo **/
+/**
+ * Widgets da lateral das paginas
+ */
+function phpsp_conteudo_widgets_init() {
+    register_sidebar( array(
+        'name' => __( 'Right Column'),
+        'id' => 'content-right-column-1',
+        'description' => __( 'Right column widget for content pages' ),
+        'before_widget' => '<div class="row-fluid widget %2$s" id="%1$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="blue-block">',
+        'after_title' => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'phpsp_conteudo_widgets_init' );
