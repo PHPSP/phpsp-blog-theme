@@ -15,7 +15,11 @@ the_post();
 			<div class="span8">
 				<article itemtype="http://schema.org/Article" itemscope>					
 					<h2><?php the_title(); ?></h2>						
-					<div class="author">Por <span itemprop="author"><?php the_author_posts_link(); ?> </span> em <time itemprop="dateCreated" datetime="<?php the_time('Y-m-d\TH:i'); ?>"><?php echo strtolower(get_the_time('j \d\e F \d\e Y')); ?></time></div>
+					<div class="author">
+                        <p>Por <span itemprop="author"><?php the_author_posts_link(); ?> </span>
+                            em <time itemprop="dateCreated" datetime="<?php the_time('Y-m-d\TH:i'); ?>"><?php echo strtolower(get_the_time('j \d\e F \d\e Y')); ?></time>
+                            em <span itemprop="category"><?php the_category(','); ?></span></p>
+                    </div>
 					<?php the_tags( '<p class="tags"><small>Tags: ', ', ', '</small></p>'); ?>
 					<div class="excerpt"><?php the_content(); ?></div>									
 				</article>
