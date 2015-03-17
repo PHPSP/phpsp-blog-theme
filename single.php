@@ -27,10 +27,10 @@ the_post();
 					if ( get_the_author_meta( 'description' ) ) : ?>
 					  <div id="entry-author-info" class="single-author-info">
 						  <div id="author-avatar">
-							  <?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentyten_author_bio_avatar_size', 60 ) ); ?>
+							  <?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentyten_author_bio_avatar_size', 80 ) ); ?>
 						  </div><!-- #author-avatar -->
 						  <div id="author-description">
-							  <h2><?php printf( __( 'Sobre %s', 'twentyten' ), get_the_author() ); ?></h2>
+							  <h2>Sobre <?php the_author_link(); ?></h2>
 							 <div><?php the_author_meta( 'description' ); ?></div>
 						  </div><!-- #author-description	-->
 					  </div><!-- #entry-author-info -->
