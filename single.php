@@ -10,7 +10,7 @@ get_header();
 the_post();
 ?>
 
-	<section class="content cat sing">
+	<section class="content sing">
 		<div class="row-fluid span12">
 			<div class="span8">
 				<article itemtype="http://schema.org/Article" itemscope>					

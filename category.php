@@ -12,7 +12,7 @@
  */
 get_header(); ?>
 
-	<section class="content cat">
+	<section class="content cat archive">
 		<div class="row-fluid span12">
 			<div class="span8">
 				<h1 class="blue-block"><strong>Categoria: </strong><?php echo single_cat_title('', false ); ?></h1>

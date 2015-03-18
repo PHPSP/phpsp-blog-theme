@@ -96,41 +96,41 @@ nav ul {
 	margin-top: 20px;
 }
 
-.cat h2{
+.archive h2{
 	margin: 10px 0px;
 	color: #18629f;
 }
 
-.cat h3{
+.archive h3{
 	margin: 10px 0px 0px 0px;
 	font-weight: normal;
 }
 
-.cat h3 a{
+.archive h3 a{
 	font-size: 22px;
 	color: #000;	
 }
 
-.cat article{
+.archive article{
 	margin: 30px 0px;
     border-bottom: 1px solid #EEEEEE;
 }
 
-.cat article .author{
+.archive article .author{
 	margin-bottom: 10px;
 }
 
-.cat article .excerpt{
+.archive article .excerpt, .content article .excerpt{
 	font-size: 16px;
 }
 
-.cat article h2{
+.archive article h2{
 	font-size: 22px;
 	color: #000000;
 	font-weight: normal;
 }
 
-.cat article h2:first-child{
+.archive article h2:first-child, .content article h2:first-child{
 	font-size: 32px;
 	margin: 0px;
 	color: #18629F;
