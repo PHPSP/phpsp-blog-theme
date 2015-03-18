@@ -136,6 +136,10 @@ nav ul {
 	color: #18629F;
 }
 
+.author-info p{
+    font-size: 16px;
+}
+
 .sing article{
 	margin: 0px;
 }
@@ -895,6 +899,19 @@ body.page .edit-link {
 	margin: 0 -104px 0 0;
 	padding: 5px;
 }
+
+.author-page .author-avatar {
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    float: left;
+    margin: 0 20px 10px 10px;
+    padding: 5px;
+}
+
+.author-card{
+    clear: both;
+}
+
 #entry-author-info #author-description {
 	float: left;
 	margin: 0 0 0 104px;
