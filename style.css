@@ -900,12 +900,16 @@ body.page .edit-link {
 	padding: 5px;
 }
 
-.author-page .author-avatar {
+.author-page .author-avatar, .single .author-avatar {
     background: #fff;
     border: 1px solid #e7e7e7;
     float: left;
     margin: 0 20px 10px 10px;
     padding: 5px;
+}
+
+.single .author-info{
+    margin: 40px 0;
 }
 
 .author-card{

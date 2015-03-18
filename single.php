@@ -10,7 +10,7 @@ get_header();
 the_post();
 ?>
 
-	<section class="content sing">
+	<section class="content sing single">
 		<div class="row-fluid span12">
 			<div class="span8">
 				<article itemtype="http://schema.org/Article" itemscope>					
@@ -24,17 +24,25 @@ the_post();
                     <?php the_tags( '<p class="tags">Tags: ', ', ', '</p>'); ?>
                 </article>
 				<?php
-					if ( get_the_author_meta( 'description' ) ) : ?>
-					  <div id="entry-author-info" class="single-author-info">
-						  <div id="author-avatar">
-							  <?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentyten_author_bio_avatar_size', 80 ) ); ?>
-						  </div><!-- #author-avatar -->
-						  <div id="author-description">
-							  <h2>Sobre <?php the_author_link(); ?></h2>
-							 <div><?php the_author_meta( 'description' ); ?></div>
-						  </div><!-- #author-description	-->
-					  </div><!-- #entry-author-info -->
-				<?php endif; ?>
+                if ( get_the_author_meta( 'description' ) ) : ?>
+                    <div class="author-info">
+                        <div class="author-description">
+                            <h2 class="blue-block"><?php printf( __( 'Sobre <strong>%s</strong>' ), get_the_author() ); ?></h2>
+                            <div class="author-avatar">
+                                <?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentytwelve_author_bio_avatar_size', 120 ) ); ?>
+                            </div><!-- .author-avatar -->
+                            <p><?php the_author_meta( 'description' ); ?></p>
+                        </div><!-- .author-description	-->
+                        <?php if(get_the_author_meta('url')): ?>
+                            <div class="author-card">
+                                <p class="author-link">Site: <a href="<?php echo get_the_author_meta('url');?>"><?php echo get_the_author_meta('url'); ?></a></p>
+                            </div>
+                        <?php endif; ?>
+                        <p>Mais posts de <?php echo the_author_posts_link(); ?>.</p>
+                    </div><!-- .author-info -->
+                <?php else: ?>
+
+                <?php endif; ?>
 				<?php comments_template(); ?>
 			</div>
             <div class="span4">
