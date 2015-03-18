@@ -113,6 +113,7 @@ nav ul {
 
 .cat article{
 	margin: 30px 0px;
+    border-bottom: 1px solid #EEEEEE;
 }
 
 .cat article .author{
@@ -120,7 +121,7 @@ nav ul {
 }
 
 .cat article .excerpt{
-	font-size: 14px;
+	font-size: 16px;
 }
 
 .cat article h2{
@@ -555,6 +556,15 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 .shared a{
 	text-decoration: none;
 	padding: 0px 2px;
+}
+
+h1.blue-block, h1.black-block, h1.grey-block {
+    border-bottom: 1px solid #E1E1E1;
+    font-weight: normal;
+    padding-bottom: 5px;
+    margin: 15px 0px;
+    font-size: 28px;
+    float: none;
 }
 
 h2.blue-block, h2.black-block, h2.grey-block {
@@ -1248,4 +1258,24 @@ h3#reply-title {
 .meetup_list li{
     font-size: 14px;
     margin: 10px 0px;
+}
+
+.ver-mais{
+    background: #0088cc;
+    width: 100px;
+    height: 20px;
+    text-align: center;
+    padding: 8px;
+}
+.ver-mais a{
+    color: #E1E1E1;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.ver-mais a:hover{
+    color: #FFFFFF;
+    text-decoration: none;
 }
