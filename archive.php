@@ -19,38 +19,26 @@
 
 get_header(); ?>
 
-	<section id="primary" class="site-content">
-		<div id="content" role="main" class="row-fluid span12">
+	<section id="primary" class="content archive">
+		<div class="row-fluid span12">
             <div class="span8">
 
             <?php if ( have_posts() ) : ?>
                 <header class="archive-header">
-                    <h2 class="archive-title"><?php
+                    <h1 class="blue-block"><strong>Arquivo:</strong> <?php
                         if ( is_day() ) :
-                            printf( __( 'Arquivo: %s' ), '<span>' . get_the_date() . '</span>' );
+                            echo  get_the_date();
                         elseif ( is_month() ) :
-                            printf( __( 'Arquivo: %s' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'twentytwelve' ) ) . '</span>' );
+                            echo get_the_date( _x('F Y', 'monthly archives date format' ));
                         elseif ( is_year() ) :
-                            printf( __( 'Arquivo: %s' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'twentytwelve' ) ) . '</span>' );
-                        else :
-                            _e( 'Arquivo' );
+                            echo get_the_date( _x('Y', 'yearly archives date format'));
                         endif;
-                    ?></h2>
+                    ?></h1>
                 </header><!-- .archive-header -->
 
-                <?php
-                /* Start the Loop */
-				while ( have_posts() ) : the_post();
-                    ?>
-                    <article itemtype="http://schema.org/Article" itemscope>
-                        <h3><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-                        <time itemprop="dateCreated" datetime="<?php the_time('Y-m-d\TH:i'); ?>"><?php echo ucfirst(strtolower(get_the_time('l, j \d\e F, Y'))); ?></time>
-                        <div class="author">By <span itemprop="author"><?php the_author(); ?> </span></div>
-                        <div class="excerpt"><?php the_excerpt(); ?></div>
-                    </article>
-                <?php
-                endwhile;
-			?>
+                <?php while ( have_posts() ) : the_post(); ?>
+                    <?php get_template_part( 'archive', 'post' ); ?>
+                <?php endwhile; ?>
                 <div class="nav-previous">&nbsp;<?php previous_posts_link( '<< Página Anterior' ); ?></div>
                 <div class="nav-next">&nbsp;<?php next_posts_link( 'Próxima Página >>' ); ?></div>
 
