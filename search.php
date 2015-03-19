@@ -18,7 +18,7 @@ get_header(); ?>
 				?>
 						<article itemscope itemtype="http://schema.org/Article">						
 							<h3><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>						
-							<time itemprop="dateCreated" datetime="<?php the_time('Y-m-d\TH:i'); ?>"><?php echo ucfirst(strtolower(get_the_time('l, j \d\e F, Y'))); ?></time>
+							<time itemprop="dateCreated" datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_date(); ?></time>
 							<div class="author">By <span itemprop="author"><?php the_author(); ?> </span></div>					
 							<div class="excerpt"><?php the_excerpt(); ?></div>
 						</article>

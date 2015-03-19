@@ -12,7 +12,7 @@
         <h2><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
         <div class="author">
             <p>Por <span itemprop="author"><?php the_author_posts_link(); ?> </span>
-                em <time itemprop="dateCreated" datetime="<?php the_time('Y-m-d\TH:i'); ?>"><?php echo strtolower(get_the_time('j \d\e F \d\e Y')); ?></time></span>
+                em <time itemprop="dateCreated" datetime="<?php the_time('Y-m-d H:i:s'); ?>"><?php the_date(); ?></time></span>
                 <?php if (!is_category()) : ?>
                 em <span itemprop="category"><?php the_category(','); ?></span>
                 <?php endif; ?>
