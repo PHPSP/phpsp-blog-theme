@@ -17,7 +17,7 @@ the_post();
 					<h2><?php the_title(); ?></h2>						
 					<div class="author">
                         <p>Por <span itemprop="author"><?php the_author_posts_link(); ?> </span>
-                            em <time itemprop="dateCreated" datetime="<?php the_time('Y-m-d\TH:i'); ?>"><?php echo strtolower(get_the_time('j \d\e F \d\e Y')); ?></time>
+                            em <time itemprop="dateCreated" datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_date(); ?></time>
                             em <span itemprop="category"><?php the_category(','); ?></span></p>
                     </div>
 					<div class="excerpt"><?php the_content(); ?></div>

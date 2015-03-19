@@ -29,9 +29,9 @@ get_header(); ?>
                         if ( is_day() ) :
                             echo  get_the_date();
                         elseif ( is_month() ) :
-                            echo get_the_date( _x('F Y', 'monthly archives date format' ));
+                            echo get_the_date('m/Y');
                         elseif ( is_year() ) :
-                            echo get_the_date( _x('Y', 'yearly archives date format'));
+                            echo get_the_date('Y');
                         endif;
                     ?></h1>
                 </header><!-- .archive-header -->
