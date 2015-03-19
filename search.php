@@ -9,27 +9,21 @@
 
 get_header(); ?>
 
-	<section class="content cat">
-		<div class="row-fluid">
-			<div class="span8">			
-				<h2><?php printf( __( 'Search Results for: %s', 'twentytwelve' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
-				<?php
-					while ( have_posts() ) : the_post();
-				?>
-						<article itemscope itemtype="http://schema.org/Article">						
-							<h3><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>						
-							<time itemprop="dateCreated" datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_date(); ?></time>
-							<div class="author">By <span itemprop="author"><?php the_author(); ?> </span></div>					
-							<div class="excerpt"><?php the_excerpt(); ?></div>
-						</article>
-				<?php			
-					endwhile; 
-					//the_bootstrap_content_nav();
-				?>
+	<section class="content archive">
+        <div class="row-fluid span12">
+            <div class="span8">
+                <h1 class="blue-block"><strong>Busca por:</strong> <?php echo get_search_query(); ?></h1>
+				<?php while ( have_posts() ) : the_post(); ?>
+                        <?php get_template_part( 'archive', 'post' ); ?>
+				<?php endwhile; ?>
 				<div class="nav-previous">&nbsp;<?php previous_posts_link( '<< Página Anterior' ); ?></div>
 				<div class="nav-next">&nbsp;<?php next_posts_link( 'Próxima Página >>' ); ?></div>
 			</div>
-			<?php get_sidebar(); ?>
+            <div class="span4">
+                <?php if (is_active_sidebar('content-right-column-1')) : ?>
+                    <?php dynamic_sidebar('content-right-column-1'); ?>
+                <?php endif; ?>
+            </div>
 		</div>
 	</section>
 <?php get_footer(); ?>
