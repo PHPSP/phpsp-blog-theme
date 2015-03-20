@@ -641,7 +641,7 @@ class PHPSP_Artigos_Widget extends WP_Widget {
 
     public function update($new_instance, $old_instance) {
         $instance = $old_instance;
-        $instance['title'] = strip_tags($new_instance['title']);
+        $instance['title'] = strip_tags($new_instance['title'], '<strong></strong>');
         $instance['cat'] = strip_tags($new_instance['cat']);
         $instance['limit'] = strip_tags($new_instance['limit']);
         $instance['more'] = strip_tags($new_instance['more']);
@@ -675,7 +675,6 @@ class PHPSP_Artigos_Widget extends WP_Widget {
                 <select id="' . $this->get_field_id('cat') . '" name="' . $this->get_field_name('cat') . '" class="widefat" style="width:100%;">';
 
         foreach(get_terms('category','parent=0&hide_empty=0') as $term) {
-            $selected =
             $form .= '<option ' . selected($cat, $term->term_id, false ) . ' value="' . $term->term_id . '">' . $term->name . '</option>';
         }
 
