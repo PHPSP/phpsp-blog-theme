@@ -183,3 +183,76 @@ function PHPSP_register_widgets() {
 }
 
 add_action( 'widgets_init', 'PHPSP_register_widgets' );
+
+/** Configuracao padrao */
+$active_widgets = get_option( 'sidebars_widgets' );
+
+//Pra nao salvar atoa
+$hasChange = false;
+
+//Configura a primeira coluna, se estiver vazia
+if (empty($active_widgets['home-column-1'])) {
+
+    $hasChange = true;
+
+    $counter = 1;
+    //Meetup
+    $active_widgets['home-column-1'][0] = 'vsmeetlistwidget-'.$counter;
+
+    $meetup_widget_content[$counter] = array(
+        'title' => 'Próximos Eventos',
+        'id' => 'php-sp',
+        'limit' => 10
+    );
+
+    $counter++;
+
+    update_option('widget_vsmeetlistwidget', $meetup_widget_content);
+}
+
+//Configura a segunda coluna, se estiver vazia
+if (empty($active_widgets['home-column-2'])) {
+
+    $hasChange = true;
+
+    $counter = 1;
+    //Artigos
+    $active_widgets['home-column-2'][0] = 'phpsp-artigos-'.$counter;
+
+    $artigos_widget_content[$counter] = array(
+        'title' => '<strong>Artigos</strong> da comunidade',
+        'cat' => 3,
+        'limit' => 5,
+        'more' => 'Ver mais artigos...'
+    );
+
+    $counter++;
+
+    update_option('widget_phpsp-artigos', $artigos_widget_content);
+}
+
+//Configura a segunda coluna, se estiver vazia
+if (empty($active_widgets['home-column-3'])) {
+
+    $hasChange = true;
+
+    $counter = 1;
+    //Avisos
+    $active_widgets['home-column-3'][0] = 'phpsp-avisos-'.$counter;
+
+    $avisos_widget_content[$counter] = array(
+        'title' => '<strong>Avisos</strong> da comunidade',
+        'cat' => 776,
+        'limit' => 1,
+        'show_more' => 0,
+        'more' => 'Ver mais avisos...'
+    );
+
+    $counter++;
+
+    update_option('widget_phpsp-avisos', $avisos_widget_content);
+}
+
+if ($hasChange) {
+    update_option( 'sidebars_widgets', $active_widgets );
+}
