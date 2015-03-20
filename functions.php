@@ -645,7 +645,7 @@ class PHPSP_Artigos_Widget extends WP_Widget {
             ';
         }
 
-        echo '<a class="todos_artigos" href="' . get_category_link($instance['cat']) . '">Ver mais...</a>';
+        echo '<a class="todos_artigos" href="' . get_category_link($instance['cat']) . '">' . $instance['more'] . '</a>';
 
         echo $args['after_widget'];
     }
@@ -655,6 +655,7 @@ class PHPSP_Artigos_Widget extends WP_Widget {
         $instance['title'] = strip_tags($new_instance['title']);
         $instance['cat'] = strip_tags($new_instance['cat']);
         $instance['limit'] = strip_tags($new_instance['limit']);
+        $instance['more'] = strip_tags($new_instance['more']);
 
         return $instance;
     }
@@ -664,10 +665,12 @@ class PHPSP_Artigos_Widget extends WP_Widget {
             $title = esc_attr($instance['title']);
             $cat = esc_attr($instance['cat']);
             $limit = esc_attr($instance['limit']);
+            $more = esc_attr($instance['more']);
         } else {
             $title = '';
             $cat = '';
             $limit = 5;
+            $more = ' Ver mais...';
         }
 
         $form = '
@@ -690,12 +693,18 @@ class PHPSP_Artigos_Widget extends WP_Widget {
         $form .= '
                 </select>
             </label>
+        </p>
         <p>
             <label for="' . $this->get_field_id('limit') . '">
                 Quantidade
                 <input class="widefat" id="' . $this->get_field_id('limit') . '" name="' . $this->get_field_name('limit') . '" type="text" value="' . $limit . '" />
             </label>
         </p>
+        <p>
+            <label for="' . $this->get_field_id('more') . '">
+                Texto final
+                <input class="widefat" id="' . $this->get_field_id('more') . '" name="' . $this->get_field_name('more') . '" type="text" value="' . $more . '" />
+            </label>
         </p>
         ';
 
