@@ -623,7 +623,6 @@ class PHPSP_Artigos_Widget extends WP_Widget {
     }
 
     public function widget ($args, $instance) {
-//        wp_reset_query();
         $query_args = array( 'cat' => $instance['cat'], 'posts_per_page' => $instance['limit'] );
         $loop = new WP_Query($query_args);
         echo $args['before_widget'];
@@ -707,7 +706,6 @@ class PHPSP_Avisos_Widget extends WP_Widget {
     }
 
     public function widget ($args, $instance) {
-//        wp_reset_query();
         $query_args = array( 'cat' => $instance['cat'], 'posts_per_page' => $instance['limit'] );
         $loop = new WP_Query($query_args);
         echo $args['before_widget'];
