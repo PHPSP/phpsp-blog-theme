@@ -17,32 +17,18 @@
 get_header(); ?>
 
 	<section class="img-destaque">
-		<?php
-			$header_image = get_header_image();
-			if ( $header_image ) :
-				if ( function_exists( 'get_custom_header' ) ) {
-					$header_image_width = get_theme_support( 'custom-header', 'width' );
-				} else {
-					$header_image_width = HEADER_IMAGE_WIDTH;
-				}
-				?>
-			<?php
-				if ( is_singular() && has_post_thumbnail( $post->ID ) &&
-						( $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), array( $header_image_width, $header_image_width ) ) ) &&
-						$image[1] >= $header_image_width ) :
-					echo get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
-				else :
-					if ( function_exists( 'get_custom_header' ) ) {
-						$header_image_width  = get_custom_header()->width;
-						$header_image_height = get_custom_header()->height;
-					} else {
-						$header_image_width  = HEADER_IMAGE_WIDTH;
-						$header_image_height = HEADER_IMAGE_HEIGHT;
-					}
-					?>
-				<img class="img_fundo_topo" src="<?php header_image(); ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" alt="" />
-		<?php endif;  ?>
-		<?php endif; ?>
+        <?php
+        $header_image = get_header_image();
+        if ($header_image) {
+            $header_image_width  = get_custom_header()->width;
+            $header_image_height = get_custom_header()->height;
+        } else {
+            $header_image = get_template_directory_uri() . '/img/cropped-banner.jpg';
+            $header_image_width  = HEADER_IMAGE_WIDTH;
+            $header_image_height = HEADER_IMAGE_HEIGHT;
+        }
+        ?>
+        <img class="img_fundo_topo" src="<?php echo $header_image; ?>" width="<?php echo $header_image_width; ?>" height="<?php echo $header_image_height; ?>" alt="" />
 	</section>
 	<section class="content">
 		<div class="row-fluid">
