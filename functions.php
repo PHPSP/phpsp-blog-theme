@@ -631,18 +631,7 @@ class PHPSP_Artigos_Widget extends WP_Widget {
 
         while ($loop->have_posts()) {
             $loop->the_post();
-            echo '
-            <div class="row-fluid article-phpsp-home">
-                    <div class="span3">';
-            echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'the-bootstrap_author_bio_avatar_size', 70 ) );
-            echo '
-            </div>
-            <div class="span9">
-                <div class="art_title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></div>
-                    <small class="art_por"> por <a href="'. get_author_posts_url(get_the_author_meta('ID')) . '">' . get_the_author() .'</a></small>
-                </div>
-            </div>
-            ';
+            get_template_part('widget', 'artigos');
         }
 
         echo '<a class="todos_artigos" href="' . get_category_link($instance['cat']) . '">' . $instance['more'] . '</a>';
