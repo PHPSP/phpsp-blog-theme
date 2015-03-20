@@ -82,10 +82,10 @@ get_header(); ?>
             <?php endif; ?>
             </div>
             <div class="bl_avisos span4">
-			    <h2 class="grey-block"><strong>Avisos</strong> da comunidade</h2>
             <?php if (is_active_sidebar('home-column-3')) : ?>
                 <?php dynamic_sidebar('home-column-3'); ?>
             <?php else : ?>
+                <h2 class="grey-block"><strong>Avisos</strong> da comunidade</h2>
 			    <?php
 				wp_reset_query();				
 				$loop = new WP_Query( array( 'category_name' => 'Avisos', 'posts_per_page' => 1 ) );
