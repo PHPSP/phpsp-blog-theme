@@ -614,3 +614,97 @@ function phpsp_conteudo_widgets_init() {
     ) );
 }
 add_action( 'widgets_init', 'phpsp_conteudo_widgets_init' );
+
+/** Widgets classes */
+class PHPSP_Artigos_Widget extends WP_Widget {
+
+    public function PHPSP_Artigos_Widget() {
+        parent::WP_Widget('phpsp-artigos', 'PHPSP - Artigos', ' Lista de Artigos de uma categoria');
+    }
+
+    public function widget ($args, $instance) {
+//        wp_reset_query();
+        $query_args = array( 'cat' => $instance['cat'], 'posts_per_page' => $instance['limit'] );
+        $loop = new WP_Query($query_args);
+        echo $args['before_widget'];
+        echo $args['before_title'] . $instance['title'] . $args['after_title'];
+
+        while ($loop->have_posts()) {
+            $loop->the_post();
+            echo '
+            <div class="row-fluid article-phpsp-home">
+                    <div class="span3">';
+            echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'the-bootstrap_author_bio_avatar_size', 70 ) );
+            echo '
+            </div>
+            <div class="span9">
+                <div class="art_title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></div>
+                    <small class="art_por"> por <a href="'. get_author_posts_url(get_the_author_meta('ID')) . '">' . get_the_author() .'</a></small>
+                </div>
+            </div>
+            ';
+        }
+
+        echo '<a class="todos_artigos" href="' . get_category_link($instance['cat']) . '">Ver mais...</a>';
+
+        echo $args['after_widget'];
+    }
+
+    public function update($new_instance, $old_instance) {
+        $instance = $old_instance;
+        $instance['title'] = strip_tags($new_instance['title']);
+        $instance['cat'] = strip_tags($new_instance['cat']);
+        $instance['limit'] = strip_tags($new_instance['limit']);
+
+        return $instance;
+    }
+
+    public function form($instance) {
+        if ( $instance ) {
+            $title = esc_attr($instance['title']);
+            $cat = esc_attr($instance['cat']);
+            $limit = esc_attr($instance['limit']);
+        } else {
+            $title = '';
+            $cat = '';
+            $limit = 5;
+        }
+
+        $form = '
+        <p>
+            <label for="' . $this->get_field_id('title') . '">
+                Título
+                <input class="widefat" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . $title . '" />
+            </label>
+        </p>
+        <p>
+            <label for="' . $this->get_field_id('cat') . '">
+                Categoria
+                <select id="' . $this->get_field_id('cat') . '" name="' . $this->get_field_name('cat') . '" class="widefat" style="width:100%;">';
+
+        foreach(get_terms('category','parent=0&hide_empty=0') as $term) {
+            $selected =
+            $form .= '<option ' . selected($cat, $term->term_id, false ) . ' value="' . $term->term_id . '">' . $term->name . '</option>';
+        }
+
+        $form .= '
+                </select>
+            </label>
+        <p>
+            <label for="' . $this->get_field_id('limit') . '">
+                Quantidade
+                <input class="widefat" id="' . $this->get_field_id('limit') . '" name="' . $this->get_field_name('limit') . '" type="text" value="' . $limit . '" />
+            </label>
+        </p>
+        </p>
+        ';
+
+        echo $form;
+    }
+}
+
+function PHPSP_register_widgets() {
+	register_widget( 'PHPSP_Artigos_Widget' );
+}
+
+add_action( 'widgets_init', 'PHPSP_register_widgets' );
