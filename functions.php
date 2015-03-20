@@ -634,7 +634,7 @@ class PHPSP_Artigos_Widget extends WP_Widget {
             get_template_part('widget', 'artigos');
         }
 
-        echo '<a class="todos_artigos" href="' . get_category_link($instance['cat']) . '">' . $instance['more'] . '</a>';
+        echo '<div class="todos_artigos"><a href="' . get_category_link($instance['cat']) . '">' . $instance['more'] . '</a></div>';
 
         echo $args['after_widget'];
     }
