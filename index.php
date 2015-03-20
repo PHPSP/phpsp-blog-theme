@@ -59,10 +59,10 @@ get_header(); ?>
             <?php endif; ?>
             </div>
             <div class="bl_artigos span4">
-				<h2 class="blue-block"><strong>Artigos</strong> da comunidade</h2>
             <?php if (is_active_sidebar('home-column-2')) : ?>
                 <?php dynamic_sidebar('home-column-2'); ?>
             <?php else : ?>
+                <h2 class="blue-block"><strong>Artigos</strong> da comunidade</h2>
 				<?php   wp_reset_query();
 					$args = array( 'category_name' => 'artigos', 'posts_per_page' => 5 );
 					$loop = new WP_Query( $args );
