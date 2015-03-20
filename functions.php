@@ -587,15 +587,13 @@ add_action( 'widgets_init', 'phpsp_home_widgets_init' );
 /**
  * Menus (2 linhas) no Cabecalho
  *
- * Estamos usando IDs e nao configuracao no menu.
- * Desnecessario inicializar as opcoes
  */
 function register_phpsp_menus()
 {
     register_nav_menus(
         array(
-//            'header-menu-1' => __('Header Menu Line 1'),
-//            'header-menu-2' => __('Header Menu Line 2')
+            'header-menu-1' => __('Header Menu Line 1'),
+            'header-menu-2' => __('Header Menu Line 2')
         )
     );
 }
@@ -626,7 +624,13 @@ add_action( 'widgets_init', 'phpsp_conteudo_widgets_init' );
  * @return bool
  */
 function phpsp_busca_menu( $args ) {
-    return false;
+    if (isset($args['menu']) && !empty($args['menu'])) {
+        return false;
+    } else {
+        $args['menu'] = $args['theme_location'];
+        unset($args['theme_location']);
+        wp_nav_menu($args);
+    }
 }
 
 /** add widgets */
