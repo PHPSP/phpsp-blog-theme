@@ -586,6 +586,7 @@ add_action( 'widgets_init', 'phpsp_home_widgets_init' );
 
 /**
  * Menus (2 linhas) no Cabecalho
+ *
  */
 function register_phpsp_menus()
 {
@@ -614,3 +615,23 @@ function phpsp_conteudo_widgets_init() {
     ) );
 }
 add_action( 'widgets_init', 'phpsp_conteudo_widgets_init' );
+
+/**
+ * Retorna falso apenas para nao mostrar um menu caso falte um
+ *
+ * @param $args
+ *
+ * @return bool
+ */
+function phpsp_busca_menu( $args ) {
+    if (isset($args['menu']) && !empty($args['menu'])) {
+        return false;
+    } else {
+        $args['menu'] = $args['theme_location'];
+        unset($args['theme_location']);
+        wp_nav_menu($args);
+    }
+}
+
+/** add widgets */
+require_once(TEMPLATEPATH."/widgets.php");

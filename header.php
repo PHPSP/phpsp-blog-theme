@@ -57,11 +57,11 @@
 			  <span class="icon-bar">Menu</span>			  
 			</a>
 			<div id="cont-menu" class="clearfix  nav-collapse collapse">
-                <?php wp_nav_menu(array('theme_location' => 'header-menu-1', 'menu_class' => 'container menu-principal')); ?>
+                <?php wp_nav_menu(array('theme_location' => 'header-menu-1', 'menu_class' => 'container menu-principal', 'fallback_cb' => 'phpsp_busca_menu')); ?>
 			</div>
 			
 			<div id="sub-menu" class="clearfix hidden-phone">
-                <?php wp_nav_menu(array('theme_location' => 'header-menu-2', 'menu_class' => 'container menu menu-secundario')); ?>
+                <?php wp_nav_menu(array('theme_location' => 'header-menu-2', 'menu_class' => 'container menu menu-secundario', 'fallback_cb' => 'phpsp_busca_menu')); ?>
 			</div>
 		</nav>
 				
