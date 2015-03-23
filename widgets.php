@@ -314,17 +314,14 @@ if (empty($active_widgets['home-column-1'])) {
 
     $hasChange = true;
 
-    $counter = 1;
     //Meetup
-    $active_widgets['home-column-1'][0] = 'vsmeetlistwidget-'.$counter;
+    $active_widgets['home-column-1'][0] = 'vsmeetlistwidget-1';
 
-    $meetup_widget_content[$counter] = array(
+    $meetup_widget_content[1] = array(
         'title' => 'Próximos Eventos',
         'id' => 'php-sp',
         'limit' => 10
     );
-
-    $counter++;
 
     update_option('widget_vsmeetlistwidget', $meetup_widget_content);
 }
@@ -334,40 +331,34 @@ if (empty($active_widgets['home-column-2'])) {
 
     $hasChange = true;
 
-    $counter = 1;
     //Artigos
-    $active_widgets['home-column-2'][0] = 'phpsp-artigos-'.$counter;
+    $active_widgets['home-column-2'][0] = 'phpsp-artigos-1';
 
-    $artigos_widget_content[$counter] = array(
+    $artigos_widget_content[1] = array(
         'title' => '<strong>Artigos</strong> da comunidade',
         'cat' => 3,
         'limit' => 5,
         'more' => 'Ver mais artigos...'
     );
 
-    $counter++;
-
     update_option('widget_phpsp-artigos', $artigos_widget_content);
 }
 
-//Configura a segunda coluna, se estiver vazia
+//Configura a terceira coluna, se estiver vazia
 if (empty($active_widgets['home-column-3'])) {
 
     $hasChange = true;
 
-    $counter = 1;
     //Avisos
-    $active_widgets['home-column-3'][0] = 'phpsp-avisos-'.$counter;
+    $active_widgets['home-column-3'][0] = 'phpsp-avisos-1';
 
-    $avisos_widget_content[$counter] = array(
+    $avisos_widget_content[1] = array(
         'title' => '<strong>Avisos</strong> da comunidade',
         'cat' => 776,
         'limit' => 1,
         'show_more' => 0,
         'more' => 'Ver mais avisos...'
     );
-
-    $counter++;
 
     update_option('widget_phpsp-avisos', $avisos_widget_content);
 }
@@ -377,39 +368,32 @@ if (empty($active_widgets['head-announce'])) {
 
     $hasChange = true;
 
-    $counter = 1;
-    //Avisos
-    $active_widgets['head-announce'][0] = 'phpsp-topo-'.$counter;
+    //Topo
+    $active_widgets['head-announce'][0] = 'phpsp-topo-1';
 
-    $topo_widget_content[$counter] = array(
+    $topo_widget_content[1] = array(
         'content' => '<strong>Próximos encontros e eventos? </strong>
         <a href="http://www.meetup.com/php-sp/">Visite a página do PHPSP no Meetup</a>',
     );
-
-    $counter++;
 
     update_option('widget_phpsp-topo', $topo_widget_content);
 }
 
 //Configura o Rodape
-unset($active_widgets['footer-links']);
 if (empty($active_widgets['footer-links'])) {
 
     $hasChange = true;
 
-    $counter = 1;
     //Facebook
-    $active_widgets['footer-links'][0] = 'phpsp-facebook-'.$counter;
+    $active_widgets['footer-links'][0] = 'phpsp-facebook-1';
 
     $footer_facebook_widget_content[$counter] = array(
         'title' => 'Curta o PHPSP',
     );
 
-    $active_widgets['footer-links'][1] = 'phpsp-parceiros-'.$counter;
+    $active_widgets['footer-links'][1] = 'phpsp-parceiros-1';
 
-    $footer_partners_widget_content[$counter] = array();
-
-    $counter++;
+    $footer_partners_widget_content[1] = array();
 
     update_option('widget_phpsp-facebook', $footer_facebook_widget_content);
     update_option('widget_phpsp-parceiros', $footer_partners_widget_content);
