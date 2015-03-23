@@ -220,10 +220,65 @@ class PHPSP_Topo_Widget extends WP_Widget {
     }
 }
 
+class PHPSP_Facebook_Widget extends WP_Widget {
+
+    public function PHPSP_Facebook_Widget() {
+        parent::WP_Widget('phpsp-facebook', 'PHPSP - Facebook', 'Plugin dop Facebook');
+    }
+
+    public function widget ($args, $instance) {
+
+        echo $args['before_widget'];
+
+        echo '<section class="container facebook">';
+
+        echo $args['before_title'];
+
+        echo $instance['title'];
+
+        echo $args['after_title'];
+
+        echo '
+                <div id="facebook-box">
+                    <div id="face">&nbsp;</div>
+                </div>
+            </section>
+        ';
+
+        echo $args['after_widget'];
+    }
+
+    public function update($new_instance, $old_instance) {
+        $instance = $old_instance;
+        $instance['title'] = strip_tags($new_instance['title'], '<strong></strong>');
+
+        return $instance;
+    }
+
+    public function form($instance) {
+        if ( $instance ) {
+            $title = esc_attr($instance['title']);
+        } else {
+            $title = '';
+        }
+
+        $form = '
+        <p>
+            <label for="' . $this->get_field_id('title') . '">
+                Título
+                <input class="widefat" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . $title . '" />
+            </label>
+        </p>';
+
+        echo $form;
+    }
+}
+
 function PHPSP_register_widgets() {
     register_widget( 'PHPSP_Artigos_Widget' );
     register_widget( 'PHPSP_Avisos_Widget' );
     register_widget( 'PHPSP_Topo_Widget' );
+    register_widget( 'PHPSP_Facebook_Widget' );
 }
 
 add_action( 'widgets_init', 'PHPSP_register_widgets' );
@@ -314,6 +369,24 @@ if (empty($active_widgets['head-announce'])) {
     $counter++;
 
     update_option('widget_phpsp-topo', $topo_widget_content);
+}
+
+//Configura o Rodape
+if (empty($active_widgets['footer-links'])) {
+
+    $hasChange = true;
+
+    $counter = 1;
+    //Facebook
+    $active_widgets['footer-links'][0] = 'phpsp-facebook-'.$counter;
+
+    $footer_widget_content[$counter] = array(
+        'title' => 'Curta o PHPSP',
+    );
+
+    $counter++;
+
+    update_option('widget_phpsp-facebook', $footer_widget_content);
 }
 
 if ($hasChange) {

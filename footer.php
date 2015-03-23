@@ -1,12 +1,7 @@
 	</section><!-- #main .wrapper -->
 	<footer role="contentinfo">
-		<section class="container facebook">
-			<h3>Curta o PHPSP</h3>
-			<div id="facebook-box">
-                <div id="face">&nbsp;</div> 
-            </div>
-        </section>
-        <section class="footer_links">		
+        <?php dynamic_sidebar('footer-links'); ?>
+        <section class="footer_links">
             <a href="http://www.soyuz.com.br/" target="_blank">
                 <img alt="Soyuz" 
                     src="<?php bloginfo( 'template_url' ); ?>/img/soyuz.png">
