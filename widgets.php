@@ -274,11 +274,31 @@ class PHPSP_Facebook_Widget extends WP_Widget {
     }
 }
 
+class PHPSP_Parceiros_Widget extends WP_Widget {
+
+    public function PHPSP_Parceiros_Widget() {
+        parent::WP_Widget('phpsp-parceiros', 'PHPSP - Parceiros', 'Imagem dos parceiros do PHPSP');
+    }
+
+    public function widget ($args, $instance) {
+        get_template_part('widget', 'parceiros');
+    }
+
+    public function update($new_instance, $old_instance) {
+        return $new_instance;
+    }
+
+    public function form($instance) {
+        echo '';
+    }
+}
+
 function PHPSP_register_widgets() {
     register_widget( 'PHPSP_Artigos_Widget' );
     register_widget( 'PHPSP_Avisos_Widget' );
     register_widget( 'PHPSP_Topo_Widget' );
     register_widget( 'PHPSP_Facebook_Widget' );
+    register_widget( 'PHPSP_Parceiros_Widget' );
 }
 
 add_action( 'widgets_init', 'PHPSP_register_widgets' );
@@ -372,6 +392,7 @@ if (empty($active_widgets['head-announce'])) {
 }
 
 //Configura o Rodape
+unset($active_widgets['footer-links']);
 if (empty($active_widgets['footer-links'])) {
 
     $hasChange = true;
@@ -380,13 +401,18 @@ if (empty($active_widgets['footer-links'])) {
     //Facebook
     $active_widgets['footer-links'][0] = 'phpsp-facebook-'.$counter;
 
-    $footer_widget_content[$counter] = array(
+    $footer_facebook_widget_content[$counter] = array(
         'title' => 'Curta o PHPSP',
     );
 
+    $active_widgets['footer-links'][1] = 'phpsp-parceiros-'.$counter;
+
+    $footer_partners_widget_content[$counter] = array();
+
     $counter++;
 
-    update_option('widget_phpsp-facebook', $footer_widget_content);
+    update_option('widget_phpsp-facebook', $footer_facebook_widget_content);
+    update_option('widget_phpsp-parceiros', $footer_partners_widget_content);
 }
 
 if ($hasChange) {
