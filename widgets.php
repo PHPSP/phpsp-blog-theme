@@ -177,9 +177,53 @@ class PHPSP_Avisos_Widget extends WP_Widget {
     }
 }
 
+class PHPSP_Topo_Widget extends WP_Widget {
+
+    public function PHPSP_Topo_Widget() {
+        parent::WP_Widget('phpsp-topo', 'PHPSP - Topo', 'Aviso no topo + redes sociais');
+    }
+
+    public function widget ($args, $instance) {
+
+        set_query_var('widget_content', $instance['content']);
+
+        echo $args['before_widget'];
+
+        get_template_part('widget', 'topo');
+
+        echo $args['after_widget'];
+    }
+
+    public function update($new_instance, $old_instance) {
+        $instance = $old_instance;
+        $instance['content'] = strip_tags($new_instance['content'], '<strong></strong><a></a>');
+
+        return $instance;
+    }
+
+    public function form($instance) {
+        if ( $instance ) {
+            $content = esc_attr($instance['content']);
+        } else {
+            $content = '';
+        }
+
+        $form = '
+        <p>
+            <label for="' . $this->get_field_id('content') . '">
+                Chamada
+                <textarea class="widefat" id="' . $this->get_field_id('content') . '" name="' . $this->get_field_name('content') . '">' . $content . '</textarea>
+            </label>
+        </p>';
+
+        echo $form;
+    }
+}
+
 function PHPSP_register_widgets() {
     register_widget( 'PHPSP_Artigos_Widget' );
     register_widget( 'PHPSP_Avisos_Widget' );
+    register_widget( 'PHPSP_Topo_Widget' );
 }
 
 add_action( 'widgets_init', 'PHPSP_register_widgets' );
@@ -251,6 +295,25 @@ if (empty($active_widgets['home-column-3'])) {
     $counter++;
 
     update_option('widget_phpsp-avisos', $avisos_widget_content);
+}
+
+//Configura o topo de avisos
+if (empty($active_widgets['head-announce'])) {
+
+    $hasChange = true;
+
+    $counter = 1;
+    //Avisos
+    $active_widgets['head-announce'][0] = 'phpsp-topo-'.$counter;
+
+    $topo_widget_content[$counter] = array(
+        'content' => '<strong>Próximos encontros e eventos? </strong>
+        <a href="http://www.meetup.com/php-sp/">Visite a página do PHPSP no Meetup</a>',
+    );
+
+    $counter++;
+
+    update_option('widget_phpsp-topo', $topo_widget_content);
 }
 
 if ($hasChange) {
