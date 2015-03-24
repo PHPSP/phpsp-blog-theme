@@ -88,7 +88,7 @@ function twentytwelve_setup() {
 	$custom_header_support = array(
 		// The default image to use.
 		// The %s is a placeholder for the theme template directory URI.
-		'default-image' => '%s/images/headers/path.jpg',
+		'default-image' => '%s/img/cropped-banner.jpg',
 		// The height and width of our custom header.
 		'width' => apply_filters( 'twentytwelve_header_image_width', 1098 ),
 		'height' => apply_filters( 'twentytwelve_header_image_height', 198 ),
