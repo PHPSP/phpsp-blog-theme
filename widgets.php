@@ -177,9 +177,128 @@ class PHPSP_Avisos_Widget extends WP_Widget {
     }
 }
 
+class PHPSP_Topo_Widget extends WP_Widget {
+
+    public function PHPSP_Topo_Widget() {
+        parent::WP_Widget('phpsp-topo', 'PHPSP - Topo', 'Aviso no topo + redes sociais');
+    }
+
+    public function widget ($args, $instance) {
+
+        set_query_var('widget_content', $instance['content']);
+
+        echo $args['before_widget'];
+
+        get_template_part('widget', 'topo');
+
+        echo $args['after_widget'];
+    }
+
+    public function update($new_instance, $old_instance) {
+        $instance = $old_instance;
+        $instance['content'] = strip_tags($new_instance['content'], '<strong></strong><a></a>');
+
+        return $instance;
+    }
+
+    public function form($instance) {
+        if ( $instance ) {
+            $content = esc_attr($instance['content']);
+        } else {
+            $content = '';
+        }
+
+        $form = '
+        <p>
+            <label for="' . $this->get_field_id('content') . '">
+                Chamada
+                <textarea class="widefat" id="' . $this->get_field_id('content') . '" name="' . $this->get_field_name('content') . '">' . $content . '</textarea>
+            </label>
+        </p>';
+
+        echo $form;
+    }
+}
+
+class PHPSP_Facebook_Widget extends WP_Widget {
+
+    public function PHPSP_Facebook_Widget() {
+        parent::WP_Widget('phpsp-facebook', 'PHPSP - Facebook', 'Plugin dop Facebook');
+    }
+
+    public function widget ($args, $instance) {
+
+        echo $args['before_widget'];
+
+        echo '<section class="container facebook">';
+
+        echo $args['before_title'];
+
+        echo $instance['title'];
+
+        echo $args['after_title'];
+
+        echo '
+                <div id="facebook-box">
+                    <div id="face">&nbsp;</div>
+                </div>
+            </section>
+        ';
+
+        echo $args['after_widget'];
+    }
+
+    public function update($new_instance, $old_instance) {
+        $instance = $old_instance;
+        $instance['title'] = strip_tags($new_instance['title'], '<strong></strong>');
+
+        return $instance;
+    }
+
+    public function form($instance) {
+        if ( $instance ) {
+            $title = esc_attr($instance['title']);
+        } else {
+            $title = '';
+        }
+
+        $form = '
+        <p>
+            <label for="' . $this->get_field_id('title') . '">
+                Título
+                <input class="widefat" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . $title . '" />
+            </label>
+        </p>';
+
+        echo $form;
+    }
+}
+
+class PHPSP_Parceiros_Widget extends WP_Widget {
+
+    public function PHPSP_Parceiros_Widget() {
+        parent::WP_Widget('phpsp-parceiros', 'PHPSP - Parceiros', 'Imagem dos parceiros do PHPSP');
+    }
+
+    public function widget ($args, $instance) {
+        get_template_part('widget', 'parceiros');
+    }
+
+    public function update($new_instance, $old_instance) {
+        return $new_instance;
+    }
+
+    public function form($instance) {
+        echo '';
+    }
+}
+
 function PHPSP_register_widgets() {
     register_widget( 'PHPSP_Artigos_Widget' );
     register_widget( 'PHPSP_Avisos_Widget' );
+    register_widget( 'PHPSP_Topo_Widget' );
+    register_widget( 'PHPSP_Facebook_Widget' );
+    register_widget( 'PHPSP_Parceiros_Widget' );
 }
 
 add_action( 'widgets_init', 'PHPSP_register_widgets' );
@@ -195,17 +314,14 @@ if (empty($active_widgets['home-column-1'])) {
 
     $hasChange = true;
 
-    $counter = 1;
     //Meetup
-    $active_widgets['home-column-1'][0] = 'vsmeetlistwidget-'.$counter;
+    $active_widgets['home-column-1'][0] = 'vsmeetlistwidget-1';
 
-    $meetup_widget_content[$counter] = array(
+    $meetup_widget_content[1] = array(
         'title' => 'Próximos Eventos',
         'id' => 'php-sp',
         'limit' => 10
     );
-
-    $counter++;
 
     update_option('widget_vsmeetlistwidget', $meetup_widget_content);
 }
@@ -215,32 +331,28 @@ if (empty($active_widgets['home-column-2'])) {
 
     $hasChange = true;
 
-    $counter = 1;
     //Artigos
-    $active_widgets['home-column-2'][0] = 'phpsp-artigos-'.$counter;
+    $active_widgets['home-column-2'][0] = 'phpsp-artigos-1';
 
-    $artigos_widget_content[$counter] = array(
+    $artigos_widget_content[1] = array(
         'title' => '<strong>Artigos</strong> da comunidade',
         'cat' => 3,
         'limit' => 5,
         'more' => 'Ver mais artigos...'
     );
 
-    $counter++;
-
     update_option('widget_phpsp-artigos', $artigos_widget_content);
 }
 
-//Configura a segunda coluna, se estiver vazia
+//Configura a terceira coluna, se estiver vazia
 if (empty($active_widgets['home-column-3'])) {
 
     $hasChange = true;
 
-    $counter = 1;
     //Avisos
-    $active_widgets['home-column-3'][0] = 'phpsp-avisos-'.$counter;
+    $active_widgets['home-column-3'][0] = 'phpsp-avisos-1';
 
-    $avisos_widget_content[$counter] = array(
+    $avisos_widget_content[1] = array(
         'title' => '<strong>Avisos</strong> da comunidade',
         'cat' => 776,
         'limit' => 1,
@@ -248,9 +360,43 @@ if (empty($active_widgets['home-column-3'])) {
         'more' => 'Ver mais avisos...'
     );
 
-    $counter++;
-
     update_option('widget_phpsp-avisos', $avisos_widget_content);
+}
+
+//Configura o topo de avisos
+if (empty($active_widgets['head-announce'])) {
+
+    $hasChange = true;
+
+    //Topo
+    $active_widgets['head-announce'][0] = 'phpsp-topo-1';
+
+    $topo_widget_content[1] = array(
+        'content' => '<strong>Próximos encontros e eventos? </strong>
+        <a href="http://www.meetup.com/php-sp/">Visite a página do PHPSP no Meetup</a>',
+    );
+
+    update_option('widget_phpsp-topo', $topo_widget_content);
+}
+
+//Configura o Rodape
+if (empty($active_widgets['footer-links'])) {
+
+    $hasChange = true;
+
+    //Facebook
+    $active_widgets['footer-links'][0] = 'phpsp-facebook-1';
+
+    $footer_facebook_widget_content[$counter] = array(
+        'title' => 'Curta o PHPSP',
+    );
+
+    $active_widgets['footer-links'][1] = 'phpsp-parceiros-1';
+
+    $footer_partners_widget_content[1] = array();
+
+    update_option('widget_phpsp-facebook', $footer_facebook_widget_content);
+    update_option('widget_phpsp-parceiros', $footer_partners_widget_content);
 }
 
 if ($hasChange) {

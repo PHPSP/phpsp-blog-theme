@@ -581,6 +581,26 @@ function phpsp_home_widgets_init() {
         'before_title' => '<h2 class="grey-block">',
         'after_title' => '</h2>',
     ) );
+
+    register_sidebar( array(
+        'name' => __( 'Website Header'),
+        'id' => 'head-announce',
+        'description' => __( 'Website Header' ),
+        'before_widget' => '<section class="container">',
+        'after_widget' => '</section>',
+        'before_title' => '',
+        'after_title' => '',
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Website Footer Links'),
+        'id' => 'footer-links',
+        'description' => __( 'Website Footer Links' ),
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    ) );
 }
 add_action( 'widgets_init', 'phpsp_home_widgets_init' );
 
