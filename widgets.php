@@ -314,16 +314,28 @@ if (empty($active_widgets['home-column-1'])) {
 
     $hasChange = true;
 
-    //Meetup
-    $active_widgets['home-column-1'][0] = 'vsmeetlistwidget-1';
+    //Meetup highlight
+    $active_widgets['home-column-1'][0] = 'vsmeetnextsinglewidget-1';
 
-    $meetup_widget_content[1] = array(
+    $meetup_widget_content_1[1] = array(
         'title' => 'Próximos Eventos',
         'id' => 'php-sp',
-        'limit' => 10
+        'date_format' => 'd/m/Y @ g:i a'
     );
 
-    update_option('widget_vsmeetlistwidget', $meetup_widget_content);
+    //Meetup lista outros
+    $active_widgets['home-column-1'][1] = 'vsmeetlistwidget-1';
+
+    $meetup_widget_content_2[1] = array(
+        'title' => '',
+        'id' => 'php-sp',
+        'hide_first' => true,
+        'limit' => 5,
+        'date_format' => 'd/m/Y @ g:i a'
+    );
+
+    update_option('widget_vsmeetnextsinglewidget', $meetup_widget_content_1);
+    update_option('widget_vsmeetlistwidget', $meetup_widget_content_2);
 }
 
 //Configura a segunda coluna, se estiver vazia
