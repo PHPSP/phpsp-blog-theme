@@ -88,7 +88,7 @@ function twentytwelve_setup() {
 	$custom_header_support = array(
 		// The default image to use.
 		// The %s is a placeholder for the theme template directory URI.
-		'default-image' => '%s/images/headers/path.jpg',
+		'default-image' => '%s/img/cropped-banner.jpg',
 		// The height and width of our custom header.
 		'width' => apply_filters( 'twentytwelve_header_image_width', 1098 ),
 		'height' => apply_filters( 'twentytwelve_header_image_height', 198 ),
@@ -580,6 +580,26 @@ function phpsp_home_widgets_init() {
         'after_widget' => '</div>',
         'before_title' => '<h2 class="grey-block">',
         'after_title' => '</h2>',
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Website Header'),
+        'id' => 'head-announce',
+        'description' => __( 'Website Header' ),
+        'before_widget' => '<section class="container">',
+        'after_widget' => '</section>',
+        'before_title' => '',
+        'after_title' => '',
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Website Footer Links'),
+        'id' => 'footer-links',
+        'description' => __( 'Website Footer Links' ),
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
     ) );
 }
 add_action( 'widgets_init', 'phpsp_home_widgets_init' );

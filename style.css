@@ -4,7 +4,7 @@ Theme URI: http://phpsp.org.br/
 Author: phpsp contributors
 Author URI: https://github.com/PHPSP/phpsp-blog-theme/graphs/contributors
 Description: Tema Wordpress do site do phpsp.org.br
-Version: 1.3.0
+Version: 1.4.0
 License: Creative Commons
 License URI: http://creativecommons.org/licenses/by-nc-nd/3.0/deed.pt
 Tags: php, phpsp
@@ -162,6 +162,17 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 
 .busca_404{
 	float: left;
+    height: 120px;
+    margin-top: 20px;
+}
+
+.busca_404 input#s{
+    width: 400px;
+    height: 40px;
+}
+
+.not-found p{
+    font-size: 18px;
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
@@ -467,7 +478,7 @@ textarea, input[type="text"], input[type="password"], input[type="datetime"], in
 	}
 	
 	.footer_links a{
-		padding: 0px 10px;	
+		padding: 0px 8px;	
 	}
 		
 }
@@ -1290,7 +1301,78 @@ h3#reply-title {
 .meetup_list {margin:0px;}
 .meetup_list li{
     font-size: 14px;
-    margin: 10px 0px;
+    margin: 20px 0px;
+    color: #555555;
+    /*list-style-image: url('img/blue-block.gif');*/
+    background: url('img/calendar.png') no-repeat 0px center;
+    padding-left: 24px;
+}
+.meetup_list li a{
+    color: #1eaecc;
+}
+
+.meetup_list li:first-child{
+    background: none;
+    padding-left: 0px;
+}
+
+.meetup_list li:last-child{
+    border: none;
+}
+
+.meetup_list li.highlight{
+    font-size: 15px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.meetup_list li.highlight a{
+    color: #0088cc;
+}
+
+.meetup_list li.disclamer{
+    font-size: 12px;
+}
+
+.meetup_list li.disclamer_phpsp{
+    padding-top: 16px;
+    font-size: 12px;
+    color: #0088cc;
+}
+
+.meetup_list li.disclamer_partner{
+    font-size: 12px;
+    color: #1eaecc;
+}
+
+.meetup_list li.desc_phpsp,.meetup_list li.desc_partner{
+    margin: 0px;
+    font-size: 12px;
+    color: #000000;
+    background: none;
+    padding-left: 0px;
+}
+.meetup_list li.desc_phpsp span{
+    width: 10px;
+    height: 10px;
+    display: block;
+    border: 1px solid #666666;
+    background: #0088cc;
+    float: left;
+    margin-top: 4px;
+    margin-right: 4px;
+}
+
+.meetup_list li.desc_partner span {
+    color: #1eaecc;
+    width: 10px;
+    height: 10px;
+    display: block;
+    border: 1px solid #666666;
+    background: #1eaecc;
+    float: left;
+    margin-top: 4px;
+    margin-right: 4px;
 }
 
 .ver-mais{

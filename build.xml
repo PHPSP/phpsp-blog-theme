@@ -48,8 +48,8 @@
                 escape="false"
                 passthru="true"
                 checkreturn="true"
-                command="curl https://downloads.wordpress.org/plugin/meetup-widgets.2.2.0.zip -o '${plugindir}meetup-widgets.2.2.0.zip'" />
-        <unzip file="${plugindir}meetup-widgets.2.2.0.zip" todir="${plugindir}" />
+                command="https://github.com/jpjoao/Meetup-Widgets/archive/2.3.1.zip -o '${plugindir}meetup-widgets.2.3.1.zip'" />
+        <unzip file="${plugindir}meetup-widgets.2.3.1.zip" todir="${plugindir}" />
 
         <fileset dir="${plugindir}" id="deleteFiles">
             <include name="wp-no-category-base.zip" />
@@ -57,7 +57,7 @@
             <include name="crayon-syntax-highlighter.zip" />
             <include name="event-organiser.latest-stable.zip" />
             <include name="easy-wp-smtp.zip" />
-            <include name="meetup-widgets.2.2.0.zip" />
+            <include name="meetup-widgets.2.3.1.zip" />
         </fileset>
 
         <delete>
