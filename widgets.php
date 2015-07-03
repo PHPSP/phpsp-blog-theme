@@ -220,30 +220,42 @@ class PHPSP_Topo_Widget extends WP_Widget {
     }
 }
 
-class PHPSP_Facebook_Widget extends WP_Widget {
+class PHPSP_Social_Widget extends WP_Widget {
 
-    public function PHPSP_Facebook_Widget() {
-        parent::WP_Widget('phpsp-facebook', 'PHPSP - Facebook', 'Plugin dop Facebook');
+    public function PHPSP_Social_Widget() {
+        parent::WP_Widget('phpsp-social', 'PHPSP - Social', 'Plugin do Facebook + Twitter');
     }
 
     public function widget ($args, $instance) {
 
         echo $args['before_widget'];
 
-        echo '<section class="container facebook">';
+        echo '<section class="container social">';
 
-        echo $args['before_title'];
+        echo <<<FACEBOOK
+        <div id="facebook">
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.3";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
 
-        echo $instance['title'];
+            <div class="fb-page" data-href="https://www.facebook.com/sao.paulo.elephants" data-width="500" data-height="400" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/sao.paulo.elephants"><a href="https://www.facebook.com/sao.paulo.elephants">PHPSP - Grupo de Usuários</a></blockquote></div></div>
+        </div>
+FACEBOOK;
 
-        echo $args['after_title'];
 
-        echo '
-                <div id="facebook-box">
-                    <div id="face">&nbsp;</div>
-                </div>
-            </section>
-        ';
+        echo <<<TWITTER
+        <div id="twitter">
+            <a class="twitter-timeline" href="https://twitter.com/phpsp" data-widget-id="617036286898098176">Tweets by @phpsp</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+TWITTER;
+
+        echo "</section>";
 
         echo $args['after_widget'];
     }
@@ -297,7 +309,7 @@ function PHPSP_register_widgets() {
     register_widget( 'PHPSP_Artigos_Widget' );
     register_widget( 'PHPSP_Avisos_Widget' );
     register_widget( 'PHPSP_Topo_Widget' );
-    register_widget( 'PHPSP_Facebook_Widget' );
+    register_widget( 'PHPSP_Social_Widget' );
     register_widget( 'PHPSP_Parceiros_Widget' );
 }
 
@@ -386,18 +398,18 @@ if (empty($active_widgets['footer-links'])) {
 
     $hasChange = true;
 
-    //Facebook
-    $active_widgets['footer-links'][0] = 'phpsp-facebook-1';
+    //Facebook + Twitter
+    $active_widgets['footer-links'][0] = 'phpsp-social-1';
 
-    $footer_facebook_widget_content[$counter] = array(
-        'title' => 'Curta o PHPSP',
+    $footer_social_widget_content[1] = array(
+        'title' => 'PHPSP nas redes sociais',
     );
 
-    $active_widgets['footer-links'][1] = 'phpsp-parceiros-1';
+    $active_widgets['footer-links'][2] = 'phpsp-parceiros-1';
 
-    $footer_partners_widget_content[1] = array();
+    $footer_partners_widget_content[3] = array();
 
-    update_option('widget_phpsp-facebook', $footer_facebook_widget_content);
+    update_option('widget_phpsp-social', $footer_social_widget_content);
     update_option('widget_phpsp-parceiros', $footer_partners_widget_content);
 }
 
