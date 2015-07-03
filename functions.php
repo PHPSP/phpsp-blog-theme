@@ -22,6 +22,8 @@
  * @since Twenty Twelve 1.0
  */
 
+CONST PHPSP_TEMPLATE_VERSION = '1.5.0';
+
 /**
  * Sets up the content width value based on the theme's design and stylesheet.
  */

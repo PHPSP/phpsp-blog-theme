@@ -1,4 +1,9 @@
 <?php
+/** Configuration */
+if (!get_option('phpsp_data_version'))
+{
+    add_option('phpsp_data_version', '0');
+}
 
 /** Widgets classes */
 class PHPSP_Artigos_Widget extends WP_Widget {
@@ -321,6 +326,18 @@ $active_widgets = get_option( 'sidebars_widgets' );
 //Pra nao salvar atoa
 $hasChange = false;
 
+$dataVersion = get_option('phpsp_data_version');
+
+$forceUdate = version_compare(PHPSP_TEMPLATE_VERSION, $dataVersion, '>') ? true : false;
+
+if($forceUdate)
+{
+    $hasChange = true;
+    $active_widgets = array('array_version' => 1);
+    $active_widgets['orphaned_widgets_1'] = array();
+    $active_widgets['wp_inactive_widgets'] = array();
+}
+
 //Configura a primeira coluna, se estiver vazia
 if (empty($active_widgets['home-column-1'])) {
 
@@ -405,14 +422,47 @@ if (empty($active_widgets['footer-links'])) {
         'title' => 'PHPSP nas redes sociais',
     );
 
-    $active_widgets['footer-links'][2] = 'phpsp-parceiros-1';
+    $active_widgets['footer-links'][1] = 'phpsp-parceiros-1';
 
-    $footer_partners_widget_content[3] = array();
+    $footer_partners_widget_content[1] = array();
 
     update_option('widget_phpsp-social', $footer_social_widget_content);
     update_option('widget_phpsp-parceiros', $footer_partners_widget_content);
 }
 
+//Configura a lateral direita (paginas internas)
+if (empty($active_widgets['content-right-column-1'])) {
+
+    $hasChange = true;
+
+    //Outros artigos
+    $active_widgets['content-right-column-1'][0] = 'phpsp-artigos-2';
+
+    $artigos_widget_content[2] = array(
+        'title' => 'Últimos Artigos',
+        'cat' => 3,
+        'limit' => 5,
+        'more' => 'Ver mais artigos...'
+    );
+
+    $active_widgets['content-right-column-1'][1] = 'categories-1';
+
+    $footer_categories_widget_content[1] = array(
+        'title' => 'Outros Temas',
+        'count' => 1,
+        'hierarchial' => 1,
+    );
+
+    update_option('widget_phpsp-artigos', $artigos_widget_content);
+    update_option('widget_categories', $footer_categories_widget_content);
+}
+
 if ($hasChange) {
+
     update_option( 'sidebars_widgets', $active_widgets );
+
+    if($forceUdate)
+    {
+        update_option('phpsp_data_version', PHPSP_TEMPLATE_VERSION);
+    }
 }
