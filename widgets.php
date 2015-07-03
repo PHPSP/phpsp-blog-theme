@@ -352,7 +352,9 @@ $hasChange = false;
 
 $dataVersion = get_option( 'phpsp_data_version' );
 
-$forceUdate = version_compare( PHPSP_TEMPLATE_VERSION, $dataVersion, '>' ) ? true : false;
+$themeVersion = wp_get_theme()->get( 'Version' );
+
+$forceUdate = version_compare( $themeVersion, $dataVersion, '>' ) ? true : false;
 
 if ( $forceUdate ) {
 	$hasChange                             = true;
@@ -485,6 +487,6 @@ if ( $hasChange ) {
 	update_option( 'sidebars_widgets', $active_widgets );
 
 	if ( $forceUdate ) {
-		update_option( 'phpsp_data_version', PHPSP_TEMPLATE_VERSION );
+		update_option( 'phpsp_data_version', $themeVersion );
 	}
 }
