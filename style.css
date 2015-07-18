@@ -1411,3 +1411,8 @@ section.social div#twitter{
     width: 400px;
     float: left;
 }
+
+#slack-invite {
+	float: left;
+	margin-right: 6px;
+}
