@@ -68,9 +68,9 @@ class PHPSP_Artigos_Widget extends WP_Widget {
 
 		foreach ( get_terms( 'category', 'parent=0&hide_empty=0' ) as $term ) {
 			$form
-				.=
-				'<option ' . selected( $cat, $term->term_id, false ) . ' value="' . $term->term_id . '">' . $term->name
-				. '</option>';
+				.= '<option ' . selected( $cat, $term->term_id, false ) . ' value="' . $term->term_id . '">'
+				   . $term->name
+				   . '</option>';
 		}
 
 		$form
@@ -166,9 +166,9 @@ class PHPSP_Avisos_Widget extends WP_Widget {
 
 		foreach ( get_terms( 'category', 'parent=0&hide_empty=0' ) as $term ) {
 			$form
-				.=
-				'<option ' . selected( $cat, $term->term_id, false ) . ' value="' . $term->term_id . '">' . $term->name
-				. '</option>';
+				.= '<option ' . selected( $cat, $term->term_id, false ) . ' value="' . $term->term_id . '">'
+				   . $term->name
+				   . '</option>';
 		}
 
 		$form
@@ -322,15 +322,42 @@ class PHPSP_Parceiros_Widget extends WP_Widget {
 	}
 
 	public function widget( $args, $instance ) {
+
+		set_query_var( 'widget_content', $instance['content'] );
+		set_query_var( 'template_url', get_bloginfo( 'template_url' ) );
+
+		echo $args['before_widget'];
+
 		get_template_part( 'widget', 'parceiros' );
+
+		echo $args['after_widget'];
 	}
 
 	public function update( $new_instance, $old_instance ) {
-		return $new_instance;
+		$instance            = $old_instance;
+		$instance['content'] = strip_tags( $new_instance['content'], '<strong></strong><a></a><img></img><br></br>' );
+
+		return $instance;
 	}
 
 	public function form( $instance ) {
-		echo '';
+		if ( $instance ) {
+			$content = esc_attr( $instance['content'] );
+		} else {
+			$content = '';
+		}
+
+		$form
+			= '
+        <p>
+            <label for="' . $this->get_field_id( 'content' ) . '">
+                Conteúdo
+                <textarea class="widefat" id="' . $this->get_field_id( 'content' ) . '" name="'
+			  . $this->get_field_name( 'content' ) . '">' . $content . '</textarea>
+            </label>
+        </p>';
+
+		echo $form;
 	}
 }
 
@@ -449,7 +476,43 @@ if ( empty( $active_widgets['footer-links'] ) ) {
 
 	$active_widgets['footer-links'][1] = 'phpsp-parceiros-1';
 
-	$footer_partners_widget_content[1] = array();
+	$template_url = get_bloginfo( 'template_url' );
+
+	$footer_partners_widget_content[1] = array(
+		'content' => '
+        <a class="logo_php" href="http://www.php.net/" target="_blank">
+            <img alt="PHP"
+                 src="' . $template_url . '/img/php.png">
+        </a><br />
+        <a href="https://azure.microsoft.com/pt-br/" target="_blank">
+            <img alt="Windows Azure"
+                 src="' . $template_url . '/img/azure.png">
+        </a>
+        <a href="http://imasters.com.br/" target="_blank">
+            <img alt="iMasters"
+                 src="' . $template_url . '/img/imasters.png">
+        </a>
+        <a href="https://paypal.com.br/" target="_blank">
+            <img alt="PayPal"
+                 src="' . $template_url . '/img/paypal.svg">
+        </a>
+        <a href="http://www.locaweb.com.br" target="_blank">
+            <img alt="LocaWeb"
+                 src="' . $template_url . '/img/locaweb.png">
+        </a>
+        <a href="http://www.jetbrains.com/phpstorm/" target="_blank">
+            <img alt="Jet Brains"
+                 src="' . $template_url . '/img/phpstorm.png">
+        </a>
+        <a href="http://www.soyuz.com.br/" target="_blank">
+            <img alt="Soyuz"
+                 src="' . $template_url . '/img/soyuz.png">
+        </a>
+        <a href="https://contaazul.com/" target="_blank">
+            <img alt="Conta Azul"
+                 src="' . $template_url . '/img/contaazul.png">
+        </a>',
+	);
 
 	update_option( 'widget_phpsp-social', $footer_social_widget_content );
 	update_option( 'widget_phpsp-parceiros', $footer_partners_widget_content );
