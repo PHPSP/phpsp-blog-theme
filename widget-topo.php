@@ -2,6 +2,9 @@
         <?php echo $widget_content;?>
     </div>
     <div class="shared">
+        <div id="slack-invite">
+            <script async defer src="https://slaking-phpsp.herokuapp.com/slackin.js"></script>
+        </div>
         <a href="http://www.meetup.com/php-sp/" target="_blank">
             <img alt="Meetup"
                  src="<?php bloginfo('template_url'); ?>/img/icons/meetup.png">
