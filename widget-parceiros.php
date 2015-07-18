@@ -1,28 +1,5 @@
     <section class="footer_links">
-        <a href="http://www.soyuz.com.br/" target="_blank">
-            <img alt="Soyuz"
-                 src="<?php bloginfo( 'template_url' ); ?>/img/soyuz.png">
-        </a>
-        <a href="http://www.php.net/" target="_blank">
-            <img alt="Php"
-                 src="<?php bloginfo( 'template_url' ); ?>/img/php.png">
-        </a>
-        <a href="http://www.windowsazure.com/pt-br/" target="_blank">
-            <img alt="Windows Azure"
-                 src="<?php bloginfo( 'template_url' ); ?>/img/azure.png">
-        </a>
-        <a href="http://imasters.com.br/" target="_blank">
-            <img alt="iMasters"
-                 src="<?php bloginfo( 'template_url' ); ?>/img/imasters.png">
-        </a>
-        <a href="https://contaazul.com/" target="_blank">
-            <img alt="Conta Azul"
-                 src="<?php bloginfo( 'template_url' ); ?>/img/contaazul.png">
-        </a>
-        <a href="http://www.jetbrains.com/phpstorm/" target="_blank">
-            <img alt="Jet Brains"
-                 src="<?php bloginfo( 'template_url' ); ?>/img/logo_phpstorm.png">
-        </a>
+        <?php echo $widget_content;?>
     </section>
     <nav class="visible-phone">
         <ul id="menu-pages" class="container menu">
