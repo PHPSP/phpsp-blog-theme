@@ -494,7 +494,7 @@ if ( empty( $active_widgets['footer-links'] ) ) {
         </a>
         <a href="https://paypal.com.br/" target="_blank">
             <img alt="PayPal"
-                 src="' . $template_url . '/img/paypal.svg">
+                 src="' . $template_url . '/img/paypal.png">
         </a>
         <a href="http://www.locaweb.com.br" target="_blank">
             <img alt="LocaWeb"
