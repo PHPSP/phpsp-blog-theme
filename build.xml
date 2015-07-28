@@ -48,7 +48,14 @@
                 escape="false"
                 passthru="true"
                 checkreturn="true"
-                command="https://github.com/jpjoao/Meetup-Widgets/archive/2.3.1.zip -o '${plugindir}meetup-widgets.2.3.1.zip'" />
+                command="https://github.com/jpjoao/Meetup-Widgets/archive/2.3.2.zip -o '${plugindir}meetup-widgets.2.3.2.zip'" />
+        <unzip file="${plugindir}meetup-widgets.2.3.1.zip" todir="${plugindir}" />
+
+        <exec
+                escape="false"
+                passthru="true"
+                checkreturn="true"
+                command="https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.4.4.zip -o '${plugindir}google-analytics-for-wordpress.5.4.4.zipp'" />
         <unzip file="${plugindir}meetup-widgets.2.3.1.zip" todir="${plugindir}" />
 
         <fileset dir="${plugindir}" id="deleteFiles">
@@ -58,6 +65,7 @@
             <include name="event-organiser.latest-stable.zip" />
             <include name="easy-wp-smtp.zip" />
             <include name="meetup-widgets.2.3.1.zip" />
+            <include name="google-analytics-for-wordpress.5.4.4.zip" />
         </fileset>
 
         <delete>
