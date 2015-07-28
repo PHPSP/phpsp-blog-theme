@@ -20,7 +20,7 @@ get_header(); ?>
 				<div class="nav-previous">&nbsp;<?php previous_posts_link( '<< Página Anterior' ); ?></div>
 				<div class="nav-next">&nbsp;<?php next_posts_link( 'Próxima Página >>' ); ?></div>
             </div>
-            <div class="span4">
+            <div class="span4 right-column">
                 <?php if (is_active_sidebar('content-right-column-1')) : ?>
                     <?php dynamic_sidebar('content-right-column-1'); ?>
                 <?php endif; ?>

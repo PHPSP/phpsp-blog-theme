@@ -47,7 +47,7 @@ get_header(); ?>
             <?php endif; ?>
 
             </div>
-            <div class="span4">
+            <div class="span4 right-column">
                 <?php if (is_active_sidebar('content-right-column-1')) : ?>
                     <?php dynamic_sidebar('content-right-column-1'); ?>
                 <?php endif; ?>
