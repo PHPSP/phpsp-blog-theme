@@ -12,7 +12,14 @@ class PHPSP_Artigos_Widget extends WP_Widget {
 	}
 
 	public function widget( $args, $instance ) {
+		global $post;
 		$query_args = array( 'cat' => $instance['cat'], 'posts_per_page' => $instance['limit'] );
+
+        if (!is_home() && isset($post->ID) && is_numeric($post->ID))
+        {
+            $query_args['post__not_in'] = array($post->ID);
+        }
+
 		$loop       = new WP_Query( $query_args );
 		echo $args['before_widget'];
 		echo $args['before_title'] . $instance['title'] . $args['after_title'];
