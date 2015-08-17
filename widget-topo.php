@@ -3,7 +3,7 @@
     </div>
     <div class="shared">
         <div id="slack-invite">
-            <script async defer src="https://slaking-phpsp.herokuapp.com/slackin.js"></script>
+            <script async defer src="https://phpsp-slackin.jelasticlw.com.br/slackin.js"></script>
         </div>
         <a href="http://www.meetup.com/php-sp/" target="_blank">
             <img alt="Meetup"
