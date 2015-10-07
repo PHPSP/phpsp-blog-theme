@@ -48,7 +48,7 @@
 			<div class="row-fluid">	
                 <h1 class="title">
                     <a href="<?php bloginfo('url') ?>">
-                        <img src="<?php bloginfo('template_url') ?>/img/logo.png" alt="">
+                        <img id="phpsp_logo" src="<?php bloginfo('template_url') ?>/img/phpsp_logo.png" alt="PHPSP">
                     </a>
                 </h1> 
                 <div class="title_web hidden-phone hidden-tablet"><?php bloginfo( 'name' ); ?></div>

@@ -25,6 +25,10 @@ header {
     padding: 20px 0px 0px 0px;
 }
 
+img#phpsp_logo{
+    max-height: 60px;
+}
+
 ul, li {
     list-style: none;
 }
