@@ -1,7 +1,4 @@
 
 <div class="aviso">
-    <?php the_excerpt()?>
+    <?php the_content();?>
 </div>
-<strong>
-    <a href="<?php the_permalink(); ?>">Saiba mais</a>
-</strong>
