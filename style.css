@@ -1563,3 +1563,24 @@ section.social div#twitter {
     font-size: 13px;
 }
 
+table.decorative {
+    border: 1px solid #CCC;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.decorative tr:nth-child(odd){
+    background-color: #FFF;
+}
+
+table.decorative tr:nth-child(even){
+    background-color: #F1F1F1;
+}
+
+table.decorative tr {
+    border-bottom: 1px solid #DDD;
+}
+
+table.decorative tr th, table.decorative tr td{
+    padding: 8px;
+}
