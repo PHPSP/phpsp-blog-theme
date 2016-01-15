@@ -16,14 +16,13 @@ get_header(); ?>
 	
 	<section class="content cat">
 		<div class="row-fluid">
-			<div class="span8">			
+			<div class="span12">
 				<?php
 					while ( have_posts() ) : the_post(); 
 						the_content();
 					endwhile;
 				?>			
 			</div>
-			<?php get_sidebar(); ?>
 		</div>
 	</section>
 
