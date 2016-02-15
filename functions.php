@@ -711,5 +711,15 @@ function phpsp_busca_menu( $args ) {
 	}
 }
 
+function removeRFCFromFeed($query) {
+	$cat = get_category_by_slug('rfc');
+	if ($query->is_feed) {
+		$query->set('cat','-'.$cat->term_id);
+	}
+	return $query;
+}
+
+add_filter('pre_get_posts','removeRFCFromFeed');
+
 /** add widgets */
 require_once( TEMPLATEPATH . "/widgets.php" );
