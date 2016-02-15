@@ -407,10 +407,11 @@ if ( empty( $active_widgets['home-column-1'] ) ) {
 
 	$meetup_widget_content_1[1] = array(
 		'title'           => 'Próximos Eventos',
-		'ids'             => 'php-sp,vagrant-sao-paulo,laravel-sp,wpsampa',
+		'ids'             => 'php-sp,phpsp-campinas,vagrant-sao-paulo,laravel-sp,wpsampa',
+        'highlight_groups'=> 'php-sp,phpsp-campinas',
 		'limit'           => 7,
 		'highlight_first' => 1,
-		'date_format'     => 'd/m @ H:i'
+		'date_format'     => 'd/m @ H:i',
 	);
 
 	update_option( 'widget_vsmeetgroupslistwidget', $meetup_widget_content_1 );
