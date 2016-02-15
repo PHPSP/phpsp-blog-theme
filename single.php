@@ -6,6 +6,18 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
+
+//check for private RFCs
+if (has_category('rfc') && !current_user_can('edit_private_posts'))
+{
+    global $wp_query;
+    $wp_query->set_404();
+    status_header(404);
+    nocache_headers();
+    include( get_query_template( '404' ) );
+    die();
+}
+
 get_header();
 the_post();
 ?>
@@ -13,8 +25,8 @@ the_post();
 	<section class="content sing single">
 		<div class="row-fluid span12">
 			<div class="span8">
-				<article itemtype="http://schema.org/Article" itemscope>					
-					<h2><?php the_title(); ?></h2>						
+				<article itemtype="http://schema.org/Article" itemscope>
+					<h2><?php the_title(); ?></h2>
 					<div class="author">
                         <p>Por <span itemprop="author"><?php the_author_posts_link(); ?> </span>
                             em <time itemprop="dateCreated" datetime="<?php the_time('Y-m-d H:i'); ?>"><?php the_date(); ?></time>
