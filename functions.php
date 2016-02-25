@@ -713,7 +713,7 @@ function phpsp_busca_menu( $args ) {
 
 function removeRFCFromFeed($query) {
 	$cat = get_category_by_slug('rfc');
-	if ($query->is_feed) {
+	if ($query->is_feed || $query->is_author) {
 		$query->set('cat','-'.$cat->term_id);
 	}
 	return $query;
