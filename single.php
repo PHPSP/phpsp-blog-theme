@@ -8,7 +8,7 @@
  */
 
 //check for private RFCs
-if (has_category('rfc') && !current_user_can('edit_private_posts'))
+if (has_category('rfc-internals') && !current_user_can('edit_users'))
 {
     global $wp_query;
     $wp_query->set_404();
