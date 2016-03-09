@@ -713,7 +713,7 @@ function phpsp_busca_menu( $args ) {
 
 function removeRFCFromFeed($query) {
 	$cat = get_category_by_slug('rfc-internals');
-	if (!($query->is_single && current_user_can( 'edit_users' ))) {
+	if (!current_user_can( 'edit_users' )) {
 		$query->set('cat','-'.$cat->term_id);
 	}
 	return $query;
