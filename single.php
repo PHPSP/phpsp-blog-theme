@@ -55,7 +55,9 @@ the_post();
                 <?php else: ?>
 
                 <?php endif; ?>
-				<?php comments_template(); ?>
+                <?php if (!(has_category('rfc-internals') || has_category('rfc'))) : ?>
+				    <?php comments_template(); ?>
+                <?php endif ?>
 			</div>
             <div class="span4 right-column">
                 <?php if (is_active_sidebar('content-right-column-1')) : ?>
