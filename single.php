@@ -39,26 +39,26 @@ the_post();
 					<div class="excerpt"><?php the_content(); ?></div>
                     <?php the_tags( '<p class="tags">Tags: ', ', ', '</p>'); ?>
                 </article>
-				<?php
-                if ( get_the_author_meta( 'description' ) ) : ?>
-                    <div class="author-info">
-                        <div class="author-description">
-                            <h2 class="blue-block"><?php printf( __( 'Sobre <strong>%s</strong>' ), get_the_author() ); ?></h2>
-                            <div class="author-avatar">
-                                <?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentytwelve_author_bio_avatar_size', 120 ) ); ?>
-                            </div><!-- .author-avatar -->
-                            <p><?php the_author_meta( 'description' ); ?></p>
-                        </div><!-- .author-description	-->
-                        <?php if(get_the_author_meta('url')): ?>
-                            <div class="author-card">
-                                <p class="author-link">Site: <a href="<?php echo get_the_author_meta('url');?>"><?php echo get_the_author_meta('url'); ?></a></p>
-                            </div>
-                        <?php endif; ?>
-                        <p>Mais posts de <?php echo the_author_posts_link(); ?>.</p>
-                    </div><!-- .author-info -->
-                <?php else: ?>
-
-                <?php endif; ?>
+                <?php if (!$is_rfc) : ?>
+                    <?php
+                    if ( get_the_author_meta( 'description' ) ) : ?>
+                        <div class="author-info">
+                            <div class="author-description">
+                                <h2 class="blue-block"><?php printf( __( 'Sobre <strong>%s</strong>' ), get_the_author() ); ?></h2>
+                                <div class="author-avatar">
+                                    <?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentytwelve_author_bio_avatar_size', 120 ) ); ?>
+                                </div><!-- .author-avatar -->
+                                <p><?php the_author_meta( 'description' ); ?></p>
+                            </div><!-- .author-description	-->
+                            <?php if(get_the_author_meta('url')): ?>
+                                <div class="author-card">
+                                    <p class="author-link">Site: <a href="<?php echo get_the_author_meta('url');?>"><?php echo get_the_author_meta('url'); ?></a></p>
+                                </div>
+                            <?php endif; ?>
+                            <p>Mais posts de <?php echo the_author_posts_link(); ?>.</p>
+                        </div><!-- .author-info -->
+                    <?php endif; // author meta ?>
+                <?php endif //is_rfc ?>
                 <?php if (!$is_rfc) : ?>
 				    <?php comments_template(); ?>
                 <?php endif ?>
