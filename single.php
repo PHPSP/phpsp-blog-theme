@@ -28,7 +28,7 @@ the_post();
 		<div class="row-fluid span12">
         <?php if (!$is_rfc) : ?>
 			<div class="span8">
-        <?php endif ?>
+        <?php endif; ?>
 				<article itemtype="http://schema.org/Article" itemscope>
 					<h2><?php the_title(); ?></h2>
 					<div class="author">
@@ -58,10 +58,10 @@ the_post();
                             <p>Mais posts de <?php echo the_author_posts_link(); ?>.</p>
                         </div><!-- .author-info -->
                     <?php endif; // author meta ?>
-                <?php endif //is_rfc ?>
+                <?php endif; //is_rfc ?>
                 <?php if (!$is_rfc) : ?>
 				    <?php comments_template(); ?>
-                <?php endif ?>
+                <?php endif; ?>
         <?php if (!$is_rfc) : ?>
 			</div>
             <div class="span4 right-column">
@@ -69,7 +69,7 @@ the_post();
                     <?php dynamic_sidebar('content-right-column-1'); ?>
                 <?php endif; ?>
             </div>
-        <?php endif ?>
+        <?php endif; ?>
 		</div>
 	</section>
 
