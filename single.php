@@ -7,6 +7,8 @@
  * @since Twenty Twelve 1.0
  */
 
+$is_rfc = (has_category('rfc-internals') || has_category('rfc')) ? true : false;
+
 //check for private RFCs
 if (has_category('rfc-internals') && !current_user_can('edit_users'))
 {
@@ -24,7 +26,9 @@ the_post();
 
 	<section class="content sing single">
 		<div class="row-fluid span12">
+        <?php if (!$is_rfc) : ?>
 			<div class="span8">
+        <?php endif ?>
 				<article itemtype="http://schema.org/Article" itemscope>
 					<h2><?php the_title(); ?></h2>
 					<div class="author">
@@ -55,15 +59,17 @@ the_post();
                 <?php else: ?>
 
                 <?php endif; ?>
-                <?php if (!(has_category('rfc-internals') || has_category('rfc'))) : ?>
+                <?php if (!$is_rfc) : ?>
 				    <?php comments_template(); ?>
                 <?php endif ?>
+        <?php if (!$is_rfc) : ?>
 			</div>
             <div class="span4 right-column">
                 <?php if (is_active_sidebar('content-right-column-1')) : ?>
                     <?php dynamic_sidebar('content-right-column-1'); ?>
                 <?php endif; ?>
             </div>
+        <?php endif ?>
 		</div>
 	</section>
 
