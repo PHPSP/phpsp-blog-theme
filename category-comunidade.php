@@ -17,13 +17,13 @@ get_header(); ?>
             <h1 class="blue-block"><strong>RFCs do PHPSP</h1>
             <table class="table table-striped">
                 <thead>
-                    <tr>
-                        <th>Título</th>
-                        <th>Status</th>
-                        <th>Autor</th>
-                        <th>Criação</th>
-                        <th>Fim da Votação</th>
-                    </tr>
+                <tr>
+                    <th>Título</th>
+                    <th>Status</th>
+                    <th>Autor</th>
+                    <th>Criação</th>
+                    <th>Fim da Votação</th>
+                </tr>
                 </thead>
                 <tbody>
                 <?php while ( have_posts() ) :
@@ -39,9 +39,10 @@ get_header(); ?>
                         $vote_end_display = '--';
                     }
                     $status = get_post_meta(get_the_ID(), 'wti_like_post_status', true);
+                    $internal_sign = has_category('rfc-internals')?'*':'';
                     ?>
                     <tr>
-                        <td><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></td>
+                        <td><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); echo $internal_sign; ?></a></td>
                         <td><?php echo $status ?></td>
                         <td><?php the_author() ?></td>
                         <td><time itemprop="dateCreated" datetime="<?php the_time('Y-m-d H:i:s'); ?>"><?php the_date(); ?></time></td>
@@ -50,6 +51,9 @@ get_header(); ?>
                 <?php endwhile; ?>
                 </tbody>
             </table>
+            <?php if ( current_user_can('edit_users') ) :?>
+            <blockquote> * Significa que a RFC é privada</blockquote>
+            <?php endif; ?>
             <div class="nav-previous">&nbsp;<?php previous_posts_link( '<< Página Anterior' ); ?></div>
             <div class="nav-next">&nbsp;<?php next_posts_link( 'Próxima Página >>' ); ?></div>
         </div>
