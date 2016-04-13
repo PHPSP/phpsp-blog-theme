@@ -712,11 +712,19 @@ function phpsp_busca_menu( $args ) {
 }
 
 function removeRFCFromFeed($query) {
-	$cat = get_category_by_slug('rfc-internals');
-	if (!current_user_can( 'edit_users' )) {
-		$query->set('cat','-'.$cat->term_id);
-	}
-	return $query;
+    $cat = get_category_by_slug( 'rfc-internals' );
+    $cat = '-'.$cat->term_id;
+
+    //Don't remove the cat that is being searched for
+    if ("" !== $query->get( 'cat' ))
+    {
+        $cat = array($cat, $query->get( 'cat' ));
+    }
+    //Disable access to private category
+    if (!current_user_can( 'publish_posts' )) {
+        $query->set('category__in', $cat);
+    }
+    return $query;
 }
 
 add_filter('pre_get_posts','removeRFCFromFeed');
