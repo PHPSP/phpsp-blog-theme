@@ -14,41 +14,29 @@
 
 ### Instalação
 
-#### Produção
+#### Em Produção
 
 Com o WordPress instalado baixe o [tema na versão mais recente](https://github.com/PHPSP/phpsp-blog-theme/releases) e instale pelo gerenciador de temas do WordPress.
 
 É necessário instalar os [plugins](#plugins-e-depend%C3%AAncias) e ativá-los;
 
-#### Localmente
+#### Em Desenvolvimento
 
-Baixe a versão mais recente do WordPress e instale-a em seu ambiente de desenvolvimento. Após isto, clone este repositório na pasta `themes`:
+##### Manualmente
+
+Baixe a versão mais recente do WordPress e instale-a em seu ambiente de desenvolvimento.
+
+Após isto, clone este repositório na pasta `themes`:
 
 ```shell
 cd seu-ambiente-de-desenvolvimento/wp-content/themes/
-git clone git@github.com:PHPSP/phpsp-blog-theme.git
+git clone https://github.com/phpsp-blog-theme.git
 ```
 
 Após instalar o tema, instale os plugins e dependências executando o arquivo de
 build com o `phing`.
 
 Finalize a instalação seguindo as [instruções no final](#finalizando-a-instala%C3%A7%C3%A3o).
-
-#### Com Vagrant
-
-Se você ainda não tiver, realize a instalação das ultimas versões do VirtualBox
-e do Vagrant no seu ambiente de desenvolvimento. Em seguida navegue pelo
-terminal até o diretório desse repositório e execute o seguinte comando:
-
-```shell
-vagrant up
-```
-
-Finalize a instalação seguindo as [instruções na seção abaixo](#finalizando-a-instala%C3%A7%C3%A3o).
-
-Crie uma referência no seu arquivo de hosts de `blog.phpsp.dev` para `192.168.56.131`.
-
-O Painel Administrativo poderá ser acessado em http://blog.phpsp.dev.
 
 #### Finalizando a Instalação
 
