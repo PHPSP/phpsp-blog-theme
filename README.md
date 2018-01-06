@@ -22,6 +22,26 @@ Com o WordPress instalado baixe o [tema na versão mais recente](https://github.
 
 #### Em Desenvolvimento
 
+##### Via Docker Compose (recomendado)
+
+Garanta que tenha a última versão do [Docker](https://www.docker.com/) e do [Docker Compose](https://docs.docker.com/compose/).
+
+Em seguida navegue pelo terminal até este diretório clonado na sua máquina, e execute o seguinte comando:
+
+```shell
+docker-compose up
+```
+
+Crie uma referência no seu arquivo de hosts de `blog.phpsp.dev` para `127.0.0.1`, algo como:
+
+```
+127.0.0.1 localhost blog.phpsp.dev
+```
+
+O tema já estará ativado quando você acessar <http://blog.phpsp.dev/>.
+
+Caso seja necessário acessar o painel administrativo, <http://blog.phpsp.dev/login>, o usuário é `wordpress` e a senha `wordpress`.
+
 ##### Manualmente
 
 Baixe a versão mais recente do WordPress e instale-a em seu ambiente de desenvolvimento.
@@ -36,9 +56,7 @@ git clone https://github.com/phpsp-blog-theme.git
 Após instalar o tema, instale os plugins e dependências executando o arquivo de
 build com o `phing`.
 
-Finalize a instalação seguindo as [instruções no final](#finalizando-a-instala%C3%A7%C3%A3o).
-
-#### Finalizando a Instalação
+Por fim:
 
 1. Acesse o painel administrativo do Wordpress
 2. Ative todos os plugins na aba **Plugins**
