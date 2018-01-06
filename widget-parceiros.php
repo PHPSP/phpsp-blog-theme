@@ -8,8 +8,8 @@
         </ul>
     </nav>
     <section id="creative-commons" class="container">
-        <a class="img-cc" rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.pt">
-            <img alt="Licença Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" />
+        <a class="img-cc" rel="license" href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.pt">
+            <img alt="Licença Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-nc-nd/3.0/88x31.png" />
         </a>
-        <p class="desc-cc span5">O trabalho Portal de <a href="http://phpsp.org.br" property="cc:attributionName" rel="cc:attributionURL">PHP-SP</a> foi licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.pt">Creative Commons - Atribuição-NãoComercial-SemDerivados 3.0 Não Adaptada</a>.</p>
+        <p class="desc-cc span5">O trabalho Portal de <a href="https://phpsp.org.br" property="cc:attributionName" rel="cc:attributionURL">PHP-SP</a> foi licenciado com uma Licença <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.pt">Creative Commons - Atribuição-NãoComercial-SemDerivados 3.0 Não Adaptada</a>.</p>
     </section>

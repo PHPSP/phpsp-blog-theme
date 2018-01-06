@@ -464,7 +464,7 @@ if ( empty( $active_widgets['head-announce'] ) ) {
 
 	$topo_widget_content[1] = array(
 		'content' => '<strong>Próximos encontros e eventos? </strong>
-        <a href="http://www.meetup.com/php-sp/">Visite a página do PHPSP no Meetup</a>',
+        <a href="https://www.meetup.com/php-sp/">Visite a página do PHPSP no Meetup</a>',
 	);
 
 	update_option( 'widget_phpsp-topo', $topo_widget_content );
@@ -496,7 +496,7 @@ if ( empty( $active_widgets['footer-links'] ) ) {
             <img alt="Windows Azure"
                  src="' . $template_url . '/img/azure.png">
         </a>
-        <a href="http://imasters.com.br/" target="_blank">
+        <a href="https://imasters.com.br/" target="_blank">
             <img alt="iMasters"
                  src="' . $template_url . '/img/imasters.png">
         </a>
@@ -504,21 +504,25 @@ if ( empty( $active_widgets['footer-links'] ) ) {
             <img alt="PayPal"
                  src="' . $template_url . '/img/paypal.png">
         </a>
-        <a href="http://www.locaweb.com.br" target="_blank">
+        <a href="https://www.locaweb.com.br" target="_blank">
             <img alt="LocaWeb"
                  src="' . $template_url . '/img/locaweb.png">
         </a>
-        <a href="http://www.jetbrains.com/phpstorm/" target="_blank">
+        <a href="https://www.jetbrains.com/phpstorm/" target="_blank">
             <img alt="Jet Brains"
                  src="' . $template_url . '/img/phpstorm.png">
         </a>
-        <a href="http://www.soyuz.com.br/" target="_blank">
+        <a href="https://soyuz.com.br/" target="_blank">
             <img alt="Soyuz"
                  src="' . $template_url . '/img/soyuz.png">
         </a>
         <a href="https://contaazul.com/" target="_blank">
             <img alt="Conta Azul"
                  src="' . $template_url . '/img/contaazul.png">
+		</a>
+		<a href="https://devnaestrada.com.br/" target="_blank">
+            <img alt="Dev Na Estrada"
+                 src="' . $template_url . '/img/devnaestrada.png">
         </a>',
 	);
 
