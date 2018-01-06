@@ -55,7 +55,7 @@
                 escape="false"
                 passthru="true"
                 checkreturn="true"
-                command="https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.4.4.zip -o '${plugindir}google-analytics-for-wordpress.5.4.4.zipp'" />
+                command="https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.4.4.zip -o '${plugindir}google-analytics-for-wordpress.5.4.4.zip'" />
         <unzip file="${plugindir}meetup-widgets.2.3.1.zip" todir="${plugindir}" />
 
         <fileset dir="${plugindir}" id="deleteFiles">
